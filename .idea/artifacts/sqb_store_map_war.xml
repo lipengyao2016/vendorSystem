@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sqb-store-map:war">
+    <output-path>$PROJECT_DIR$/../Application/source/VendorSystem/Pay/ShouQianBaServer/doc/shouqiaba/shouqianba-webapi-javademo-master/target</output-path>
+    <root id="archive" name="sqb-store-map-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="sqb-store-map:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../Application/source/VendorSystem/Pay/ShouQianBaServer/doc/shouqiaba/shouqianba-webapi-javademo-master" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../role-server/pom.xml" />
+        <option value="$PROJECT_DIR$/vendorParent/pom.xml" />
+        <option value="$PROJECT_DIR$/../Application/source/VendorSystem/Pay/ShouQianBaServer/doc/shouqiaba/shouqianba-webapi-javademo-master/pom.xml" />
+        <option value="$PROJECT_DIR$/role-server/pom.xml" />
+        <option value="$PROJECT_DIR$/commonUtils/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
