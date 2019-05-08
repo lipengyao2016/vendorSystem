@@ -14,6 +14,7 @@
       <module name="commonUtils" target="1.8" />
       <module name="role-server" target="1.8" />
       <module name="sqb-store-map" target="1.5" />
+      <module name="user-server" target="1.8" />
       <module name="vendorParent" target="1.8" />
     </bytecodeTargetLevel>
   </component>

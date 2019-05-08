@@ -39,7 +39,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
     }
 
 
-    public Object create(Object obj) {
+    public Object create(Object obj)  {
 
         try {
             ReflectUtils.setField(obj, "uuid", UUIDUtils.createUUID());

@@ -1,4 +1,4 @@
-package com.vendor.roleserver;
+package com.vendor.userserver;
 
 import com.vendor.dao.RoleDao;
 import com.vendor.entity.Roles;

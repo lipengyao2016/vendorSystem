@@ -11,8 +11,12 @@ public class ReflectUtils {
         Field f = null;
         f = cls.getDeclaredField(fieldName);
         System.out.println(f);
-        f.setAccessible(true);
-        f.set(obj, value);
+        if(f!= null)
+        {
+            f.setAccessible(true);
+            f.set(obj, value);
+        }
+
     }
 
     public static Object  createInstance(Class cls) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {

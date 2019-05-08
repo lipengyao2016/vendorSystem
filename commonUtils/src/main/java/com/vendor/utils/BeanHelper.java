@@ -5,6 +5,7 @@ import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class BeanHelper {
@@ -41,5 +42,25 @@ public class BeanHelper {
      */
     public static void copyPropertiesIgnoreNull(Object source, Object target) {
         BeanUtils.copyProperties(source, target, getNullPropertyNames(source));
+    }
+
+    public static String[] getExcludePropertyNames(Object source, List<String> excludeAttrs) {
+        final BeanWrapper src = new BeanWrapperImpl(source);
+        java.beans.PropertyDescriptor[] pds = src.getPropertyDescriptors();
+
+        Set<String> emptyNames = new HashSet<String>();
+        for (java.beans.PropertyDescriptor pd : pds) {
+            if(!excludeAttrs.contains(pd.getName()))
+            {
+                emptyNames.add(pd.getName());
+            }
+        }
+        String[] result = new String[emptyNames.size()];
+        return emptyNames.toArray(result);
+    }
+
+    public static void copyPropertiesExcludeAttr(Object source, Object target, String[] excludeAttrs) {
+
+        BeanUtils.copyProperties(source, target, excludeAttrs);
     }
 }

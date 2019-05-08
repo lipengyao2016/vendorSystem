@@ -19,6 +19,7 @@
   <modules>
     <module>../role-server</module>
     <module>../commonUtils</module>
+    <module>../user-server</module>
   </modules>
 
 

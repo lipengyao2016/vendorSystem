@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/../Application/source/VendorSystem/Pay/ShouQianBaServer/doc/shouqiaba/shouqianba-webapi-javademo-master/pom.xml" />
         <option value="$PROJECT_DIR$/role-server/pom.xml" />
         <option value="$PROJECT_DIR$/commonUtils/pom.xml" />
+        <option value="$PROJECT_DIR$/user-server/pom.xml" />
       </list>
     </option>
   </component>

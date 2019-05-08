@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/commonUtils/commonUtils.iml" filepath="$PROJECT_DIR$/commonUtils/commonUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/role-server/role-server.iml" filepath="$PROJECT_DIR$/role-server/role-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Application/source/VendorSystem/Pay/ShouQianBaServer/doc/shouqiaba/shouqianba-webapi-javademo-master/sqb-store-map.iml" filepath="$PROJECT_DIR$/../Application/source/VendorSystem/Pay/ShouQianBaServer/doc/shouqiaba/shouqianba-webapi-javademo-master/sqb-store-map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-server/user-server.iml" filepath="$PROJECT_DIR$/user-server/user-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/vendorParent/vendorParent.iml" filepath="$PROJECT_DIR$/vendorParent/vendorParent.iml" />
     </modules>
   </component>
