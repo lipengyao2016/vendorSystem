@@ -3,6 +3,7 @@ package com.vendor.service;
 import com.vendor.dao.UserDao;
 import com.vendor.dao.UserOrganizationDao;
 import com.vendor.dao.UserRoleMemberShipDao;
+import com.vendor.entity.ListResponse;
 import com.vendor.entity.UserOrganizations;
 import com.vendor.entity.UserRoleMemberShips;
 import com.vendor.entity.Users;
@@ -11,6 +12,7 @@ import com.vendor.queryvo.UserQueryVo;
 import com.vendor.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -57,7 +59,7 @@ public class UserServiceImpl   implements  IUserService{
     }
 
     @Override
-    public List<Users> list(UserQueryVo queryObj) {
+    public ListResponse<Users> list(UserQueryVo queryObj) {
         return this.baseService.list(queryObj);
     }
 
@@ -85,6 +87,8 @@ public class UserServiceImpl   implements  IUserService{
                 oldUser.getUserRoleMemberShips().add(userRoleMemberShips);
             }
         }
+
+        DBEntityUtils.preUpdate(oldUser);
 
         return this.baseService.update(oldUser);
 

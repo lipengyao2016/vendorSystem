@@ -1,9 +1,11 @@
 package com.vendor.service;
 
 import com.vendor.dao.UserRoleMemberShipDao;
+import com.vendor.entity.ListResponse;
 import com.vendor.entity.UserRoleMemberShips;
 import com.vendor.utils.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,7 +43,7 @@ public class UserRoleMemberShipServiceImpl implements  IUserRoleMemberShipServic
     }
 
     @Override
-    public List<UserRoleMemberShips> list(UserRoleMemberShips queryObj) {
+    public ListResponse<UserRoleMemberShips> list(UserRoleMemberShips queryObj) {
         return this.baseService.list(queryObj);
     }
 

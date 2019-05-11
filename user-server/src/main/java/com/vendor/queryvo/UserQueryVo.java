@@ -11,6 +11,26 @@ public class UserQueryVo {
     private String mobile;
     private String address;
 
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    private Integer page;
+
+    public Integer getRows() {
+        return rows;
+    }
+
+    public void setRows(Integer rows) {
+        this.rows = rows;
+    }
+
+    private Integer rows;
+
     public String getAge() {
         return age;
     }

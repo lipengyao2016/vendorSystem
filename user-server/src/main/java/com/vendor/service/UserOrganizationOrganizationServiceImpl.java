@@ -1,9 +1,11 @@
 package com.vendor.service;
 
 import com.vendor.dao.UserOrganizationDao;
+import com.vendor.entity.ListResponse;
 import com.vendor.entity.UserOrganizations;
 import com.vendor.utils.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,7 +43,7 @@ public class UserOrganizationOrganizationServiceImpl implements  IUserOrganizati
     }
 
     @Override
-    public List<UserOrganizations> list(UserOrganizations queryObj) {
+    public ListResponse<UserOrganizations> list(UserOrganizations queryObj) {
         return this.baseService.list(queryObj);
     }
 
@@ -66,7 +68,7 @@ public class UserOrganizationOrganizationServiceImpl implements  IUserOrganizati
 
         UserOrganizations userOrganizationQuery = new UserOrganizations();
         userOrganizationQuery.setOwnerUuid(ownerUUID);
-        List<UserOrganizations> userOrganizations = this.list(userOrganizationQuery);
+        List<UserOrganizations> userOrganizations = this.list(userOrganizationQuery).getItems();
         if(userOrganizations.size() > 0)
         {
             return  userOrganizations.get(0);

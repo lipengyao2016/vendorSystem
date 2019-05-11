@@ -1,10 +1,10 @@
 package com.vendor.service;
 
+import com.vendor.entity.ListResponse;
 import com.vendor.utils.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -94,8 +94,19 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
     }
 
 
-    public List list(Object queryObj) {
+    public ListResponse<T> list(Object queryObj) {
+        Integer page = null;
+        Integer rows = null;
+        try {
+            page = (Integer) ReflectUtils.getField(queryObj,"page");
+            rows = (Integer) ReflectUtils.getField(queryObj,"rows");
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
+        Pageable pageable=new PageRequest(page-1, rows, Sort.Direction.ASC,"createdAt");
         Specification<T> specification = new Specification<T>() {
             //toPredicate就是查询条件
             //root根对象表示实体类,要查询的类型,query所需要添加查询条件,cb构建Predicate
@@ -106,6 +117,12 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
 
                 Field[] fieldArray = queryObj.getClass().getDeclaredFields();
                 for (Field f : fieldArray) {
+
+
+                    if(f.getName().contentEquals("page") || f.getName().contentEquals("rows"))
+                    {
+                        continue;
+                    }
 
                     try {
                         String value = null;
@@ -158,8 +175,16 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
                 return cb.and(predicatesList.toArray(new Predicate[predicatesList.size()]));
             }
         };
-        List findRoles = m_jpaSpecificationExecutor.findAll(specification);
-        return findRoles;
+        Page findRoles = m_jpaSpecificationExecutor.findAll(specification,pageable);
+
+        ListResponse response = new ListResponse();
+        response.setItems(findRoles.getContent());
+        response.setCurrentPage(page);
+        response.setPageSize(rows);
+        response.setTotalSize((int) findRoles.getTotalElements());
+        response.setTotalPageCount(findRoles.getTotalPages());
+
+        return response;
     }
 
 
