@@ -8,14 +8,14 @@ import com.vendor.entity.UserRoleMemberShips;
 import com.vendor.entity.Users;
 import com.vendor.queryvo.UserCreateVo;
 import com.vendor.queryvo.UserQueryVo;
-import com.vendor.utils.BeanHelper;
-import com.vendor.utils.DataNotFoundException;
+import com.vendor.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Transactional
@@ -63,7 +63,31 @@ public class UserServiceImpl   implements  IUserService{
 
     @Override
     public Users update(String uuid, Users updateObj) {
-        return this.baseService.update(uuid,updateObj);
+
+        Users oldUser = this.get(uuid);
+        oldUser.getUserRoleMemberShips().clear();
+        String[]  excludeAttrs = {"userRoleMemberShips"};
+        if(oldUser != null)
+        {
+            BeanHelper.copyPropertiesExcludeSomeAndNullAttr(updateObj,oldUser,excludeAttrs);
+        }
+        else
+        {
+            throw new DataNotFoundException("5000","update db not found uuid:" + uuid);
+        }
+        
+        if(updateObj.getUserRoleMemberShips().size() > 0)
+        {
+            for (UserRoleMemberShips userRoleMemberShips : updateObj.getUserRoleMemberShips())
+            {
+                DBEntityUtils.preCreate(userRoleMemberShips);
+                userRoleMemberShips.setUsers(oldUser);
+                oldUser.getUserRoleMemberShips().add(userRoleMemberShips);
+            }
+        }
+
+        return this.baseService.update(oldUser);
+
     }
 
     @Override
@@ -72,22 +96,46 @@ public class UserServiceImpl   implements  IUserService{
     }
 
     @Override
+    public Users update(Users updateObj) throws DataNotFoundException {
+        return null;
+    }
+
+    @Override
     public Users combinCreate(UserCreateVo obj) throws DataNotFoundException {
         UserOrganizations userOrganizations = userOrganizationService.findUserOrga(obj.getOwnerUUID());
-
         Users createUser = new Users();
-        String[] excludeAtts ={"ownerUUID","roleUUID"};
+        String[] excludeAtts ={"ownerUUID","roleUUID","userRoleMemberShips"};
         BeanHelper.copyPropertiesExcludeAttr(obj,createUser,excludeAtts);
+        DBEntityUtils.preCreate(createUser);
+
+        for(UserRoleMemberShips userRoleMemberShips : obj.getUserRoleMemberShips())
+        {
+            DBEntityUtils.preCreate(userRoleMemberShips);
+            userRoleMemberShips.setUsers(createUser);
+        }
+        createUser.setUserRoleMemberShips(obj.getUserRoleMemberShips());
+
         Users user = this.create(createUser);
-
-        UserRoleMemberShips userRoleMemberShips = new UserRoleMemberShips();
-        userRoleMemberShips.setUserUuid(createUser.getUuid());
-        userRoleMemberShips.setRoleUuid(obj.getRoleUUID());
-
-        UserRoleMemberShips newUserRoleShips = userRoleMemberShipService.create(userRoleMemberShips);
 
        // throw  new DataNotFoundException("5004","test");
 
         return  user;
+    }
+
+    @Override
+    public Users combinUpdate(Users obj) throws DataAccessException {
+
+/*        if(obj.getUserRoleMemberShips().size() > 0)
+        {
+            for (UserRoleMemberShips userRoleMemberShips : obj.getUserRoleMemberShips())
+            {
+                userRoleMemberShips.setUsers(obj);
+            }
+        }
+
+
+        return this.baseService.update(uuid,updateObj);*/
+
+return  null;
     }
 }

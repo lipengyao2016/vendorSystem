@@ -7,3 +7,11 @@ http://localhost:9010/api/v1/roles?name=*好多*
 http://localhost:9010/api/v1/roles?uuid=afe9d695e4ce43e39fd43a
 
 http://localhost:9010/api/v1/roles?id=[12,13]
+
+
+http://localhost:9011/api/v1/users/
+ {
+        "name": "wangyun",
+        "roleUUID":"aUu4Zz0788NughRrzYh7dw",
+        "ownerUUID":"dCqavvEkybc3ZZj65Vc05g"
+},

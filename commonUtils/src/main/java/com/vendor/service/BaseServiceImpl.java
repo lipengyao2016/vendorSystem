@@ -24,6 +24,8 @@ import java.util.List;
 public class BaseServiceImpl<T, QY_T> implements IBaseService {
 
     private Log log = LogFactory.getLog(BaseServiceImpl.class);
+
+
     private JpaRepository m_jpaRepository;
     private JpaSpecificationExecutor m_jpaSpecificationExecutor;
     private Class entityClass;
@@ -42,10 +44,10 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
     public Object create(Object obj)  {
 
         try {
-            ReflectUtils.setField(obj, "uuid", UUIDUtils.createUUID());
-            ReflectUtils.setField(obj, "createdAt", new Date());
-            ReflectUtils.setField(obj, "modifiedAt", new Date());
-            ReflectUtils.setField(obj, "status", "enabled");
+            ReflectUtils.setField(obj, "uuid", UUIDUtils.createUUID(),false);
+            ReflectUtils.setField(obj, "createdAt", new Date(),true);
+            ReflectUtils.setField(obj, "modifiedAt", new Date(),true);
+            ReflectUtils.setField(obj, "status", "enabled",false);
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -62,7 +64,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         try {
             queryObj = ReflectUtils.createInstance(this.entityClass);
             try {
-                ReflectUtils.setField(queryObj, "uuid", uuid);
+                ReflectUtils.setField(queryObj, "uuid", uuid,true);
             } catch (NoSuchFieldException e) {
                 e.printStackTrace();
             }
@@ -167,7 +169,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         {
             BeanHelper.copyPropertiesIgnoreNull(updateObj,oldRole);
             try {
-                ReflectUtils.setField(oldRole, "modifiedAt", new Date());
+                ReflectUtils.setField(oldRole, "modifiedAt", new Date(),true);
             } catch (NoSuchFieldException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
@@ -195,5 +197,10 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
             throw new DataNotFoundException("5001","delete22 db not found uuid:" + uuid);
         }
          return  oldRole;
+    }
+
+    @Override
+    public Object update(Object updateObj) throws DataNotFoundException {
+        return m_jpaRepository.save(updateObj);
     }
 }

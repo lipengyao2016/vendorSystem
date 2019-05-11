@@ -10,4 +10,6 @@ public interface IBaseService<T,QY_T> {
      public List<T> list(QY_T queryObj);
      public  T update(String uuid, T updateObj) throws DataNotFoundException;
      public  T delete(String uuid);
+
+     public  T update(T updateObj) throws DataNotFoundException;
 }

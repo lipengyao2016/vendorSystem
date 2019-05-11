@@ -4,9 +4,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class BeanHelper {
 
@@ -60,7 +58,18 @@ public class BeanHelper {
     }
 
     public static void copyPropertiesExcludeAttr(Object source, Object target, String[] excludeAttrs) {
-
         BeanUtils.copyProperties(source, target, excludeAttrs);
+    }
+
+    public static void copyPropertiesExcludeSomeAndNullAttr(Object source, Object target, String[] excludeAttrs) {
+        String[] nullProperties =getNullPropertyNames(source);
+        List<String> newExcludeAttr = new ArrayList<>();
+        List<String> nullL = Arrays.asList(nullProperties);
+        newExcludeAttr.addAll(nullL);
+        List<String>  excueL = Arrays.asList(excludeAttrs);
+        newExcludeAttr.addAll(excueL);
+
+        String[] newExcludes =  newExcludeAttr.toArray(new String[newExcludeAttr.size()]);
+        BeanUtils.copyProperties(source, target, newExcludes);
     }
 }

@@ -1,5 +1,9 @@
 package com.vendor.queryvo;
 
+import com.vendor.entity.UserRoleMemberShips;
+
+import java.util.List;
+
 public class UserCreateVo {
     private String uuid;
     private String name;
@@ -129,7 +133,7 @@ public class UserCreateVo {
         this.departmentUuid = departmentUuid;
     }
 
-    public String getRoleUUID() {
+/*    public String getRoleUUID() {
         return roleUUID;
     }
 
@@ -137,5 +141,16 @@ public class UserCreateVo {
         this.roleUUID = roleUUID;
     }
 
-    private String roleUUID;
+    private String roleUUID;*/
+
+    public List<UserRoleMemberShips> getUserRoleMemberShips() {
+        return userRoleMemberShips;
+    }
+
+    public void setUserRoleMemberShips(List<UserRoleMemberShips> userRoleMemberShips) {
+        this.userRoleMemberShips = userRoleMemberShips;
+    }
+
+
+    private List<UserRoleMemberShips> userRoleMemberShips ;
 }

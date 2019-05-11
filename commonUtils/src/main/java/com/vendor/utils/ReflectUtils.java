@@ -6,7 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 
 public class ReflectUtils {
 
-    public static void setField(Object obj,String fieldName,Object value) throws NoSuchFieldException, IllegalAccessException {
+    public static void setField(Object obj,String fieldName,Object value,boolean bOverWrite)
+            throws NoSuchFieldException, IllegalAccessException {
         Class cls = obj.getClass();
         Field f = null;
         f = cls.getDeclaredField(fieldName);
@@ -14,7 +15,21 @@ public class ReflectUtils {
         if(f!= null)
         {
             f.setAccessible(true);
-            f.set(obj, value);
+
+            if(!bOverWrite)
+            {
+               Object   oldObj = f.get(obj);
+               if(oldObj == null)
+               {
+                   f.set(obj, value);
+               }
+            }
+            else
+            {
+                f.set(obj, value);
+            }
+
+
         }
 
     }

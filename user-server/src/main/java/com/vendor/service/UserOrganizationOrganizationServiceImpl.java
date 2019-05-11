@@ -2,6 +2,7 @@ package com.vendor.service;
 
 import com.vendor.dao.UserOrganizationDao;
 import com.vendor.entity.UserOrganizations;
+import com.vendor.utils.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +53,11 @@ public class UserOrganizationOrganizationServiceImpl implements  IUserOrganizati
     @Override
     public UserOrganizations delete(String uuid) {
         return this.baseService.delete(uuid);
+    }
+
+    @Override
+    public UserOrganizations update(UserOrganizations updateObj) throws DataNotFoundException {
+        return null;
     }
 
 

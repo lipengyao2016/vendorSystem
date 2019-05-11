@@ -2,6 +2,7 @@ package com.vendor.service;
 
 import com.vendor.dao.UserRoleMemberShipDao;
 import com.vendor.entity.UserRoleMemberShips;
+import com.vendor.utils.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +53,11 @@ public class UserRoleMemberShipServiceImpl implements  IUserRoleMemberShipServic
     @Override
     public UserRoleMemberShips delete(String uuid) {
         return this.baseService.delete(uuid);
+    }
+
+    @Override
+    public UserRoleMemberShips update(UserRoleMemberShips updateObj) throws DataNotFoundException {
+        return null;
     }
 
 }
