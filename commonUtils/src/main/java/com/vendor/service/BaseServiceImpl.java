@@ -27,6 +27,8 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
 
 
     private JpaRepository m_jpaRepository;
+
+
     private JpaSpecificationExecutor m_jpaSpecificationExecutor;
     private Class entityClass;
 
@@ -40,6 +42,22 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         this.entityClass = entityClass;
     }
 
+
+    public JpaRepository getM_jpaRepository() {
+        return m_jpaRepository;
+    }
+
+    public void setM_jpaRepository(JpaRepository m_jpaRepository) {
+        this.m_jpaRepository = m_jpaRepository;
+    }
+
+    public JpaSpecificationExecutor getM_jpaSpecificationExecutor() {
+        return m_jpaSpecificationExecutor;
+    }
+
+    public void setM_jpaSpecificationExecutor(JpaSpecificationExecutor m_jpaSpecificationExecutor) {
+        this.m_jpaSpecificationExecutor = m_jpaSpecificationExecutor;
+    }
 
     public Object create(Object obj)  {
 
@@ -125,6 +143,10 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
             public Predicate toPredicate(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
                 // TODO Auto-generated method stub
                 List<Predicate> predicatesList = new ArrayList<>();
+
+              // Object x = root.get("users.uuid");
+
+               // final Path<Person> per = root.<Users> get("person");
 
                 Field[] fieldArray = queryObj.getClass().getDeclaredFields();
                 for (Field f : fieldArray) {

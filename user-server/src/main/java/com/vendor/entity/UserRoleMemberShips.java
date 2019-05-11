@@ -25,7 +25,8 @@ public class UserRoleMemberShips  implements java.io.Serializable {
      private Integer id;
      private String uuid;
      private String roleUuid;
-     //private String userUuid;
+
+     private String userUuid;
 
     //出参时间格式化
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
@@ -57,7 +58,7 @@ public class UserRoleMemberShips  implements java.io.Serializable {
     public UserRoleMemberShips(String uuid, String roleUuid, String userUuid, Date createdAt, Date modifiedAt) {
        this.uuid = uuid;
        this.roleUuid = roleUuid;
-       //this.userUuid = userUuid;
+       this.userUuid = userUuid;
        this.createdAt = createdAt;
        this.modifiedAt = modifiedAt;
     }
@@ -93,14 +94,15 @@ public class UserRoleMemberShips  implements java.io.Serializable {
     }
 
 
-/*    @Column(name="userUuid", length=30)
+   // @Column(name="userUuid", length=30)
+   @Transient
     public String getUserUuid() {
         return this.userUuid;
     }
 
     public void setUserUuid(String userUuid) {
         this.userUuid = userUuid;
-    }*/
+    }
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="createdAt", length=19)

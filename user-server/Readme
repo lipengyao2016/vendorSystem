@@ -18,3 +18,19 @@ http://localhost:9011/api/v1/users/
 
 
 http://localhost:9011/api/v1/users?page=3&rows=3
+
+
+http://localhost:9011/api/v1/users/87305bc24d8d4c0a995751
+
+ {
+        "name": "wangfeigggg",
+        "ownerUUID":"dCqavvEkybc3ZZj65Vc05g",
+    "userRoleMemberShips": [
+        {
+            "roleUuid": "bUu4Zz0788NughRrzYh7dw"
+        },
+      {
+            "roleUuid": "cUu4Zz0788NughRrzYh7dw"
+        }
+    ]
+}

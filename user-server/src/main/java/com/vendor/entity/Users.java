@@ -52,7 +52,7 @@ public class Users  implements java.io.Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
      private Date modifiedAt;
 
-    @JsonIgnore
+    //@JsonIgnore
     @OneToMany(/*targetEntity = UserRoleMemberShips.class ,*/mappedBy="users"
             , cascade = {CascadeType.ALL},orphanRemoval = true)
     //@JoinColumn(name="uuid", referencedColumnName="userUuid")
