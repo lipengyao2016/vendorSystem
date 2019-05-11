@@ -3,6 +3,7 @@ package com.vendor.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.ArrayList;
@@ -51,6 +52,7 @@ public class Users  implements java.io.Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
      private Date modifiedAt;
 
+    @JsonIgnore
     @OneToMany(/*targetEntity = UserRoleMemberShips.class ,*/mappedBy="users"
             , cascade = {CascadeType.ALL},orphanRemoval = true)
     //@JoinColumn(name="uuid", referencedColumnName="userUuid")

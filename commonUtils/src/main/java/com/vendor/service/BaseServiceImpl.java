@@ -106,7 +106,18 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
             e.printStackTrace();
         }
 
-        Pageable pageable=new PageRequest(page-1, rows, Sort.Direction.ASC,"createdAt");
+
+        Pageable pageable= null;
+        if(page == null)
+        {
+           page = 1;
+        }
+        if(rows == null)
+        {
+            rows = 10000000;
+        }
+        pageable= new PageRequest(page-1, rows, Sort.Direction.ASC,"createdAt");
+
         Specification<T> specification = new Specification<T>() {
             //toPredicate就是查询条件
             //root根对象表示实体类,要查询的类型,query所需要添加查询条件,cb构建Predicate
@@ -175,7 +186,10 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
                 return cb.and(predicatesList.toArray(new Predicate[predicatesList.size()]));
             }
         };
-        Page findRoles = m_jpaSpecificationExecutor.findAll(specification,pageable);
+        Page findRoles = null;
+
+        findRoles = m_jpaSpecificationExecutor.findAll(specification,pageable);
+
 
         ListResponse response = new ListResponse();
         response.setItems(findRoles.getContent());
