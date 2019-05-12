@@ -75,6 +75,16 @@ public class UserRoleQueryVO {
      private String createdAt;
      private String modifiedAt;
 
+    public UserQueryVo getUsers() {
+        return users;
+    }
+
+    public void setUsers(UserQueryVo users) {
+        this.users = users;
+    }
+
+    private  UserQueryVo users;
+
 
 
 

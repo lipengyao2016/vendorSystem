@@ -9,10 +9,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
@@ -137,6 +134,111 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         pageable= new PageRequest(page-1, rows, Sort.Direction.ASC,"createdAt");
 
         Specification<T> specification = new Specification<T>() {
+
+            @SuppressWarnings("unchecked")
+            private <T, R> Path<R> getPath(Class<R> resultType, Path<T> root, String path) {
+                String[] pathElements = path.split("\\.");
+                Path<?> retVal = root;
+                for (String pathEl : pathElements) {
+                    retVal = (Path<R>) retVal.get(pathEl);
+                }
+                return (Path<R>) retVal;
+            }
+
+            public void addQueryCond(List<Predicate> predicatesList, CriteriaBuilder cb,Root<T> root,String ziduanName,String value)
+            {
+                if(value != null)
+                {
+                    Path ziduanPath = this.getPath(String.class,root,ziduanName);
+                    if (value.contains("[")) {
+                        List<Object> valueList = GsonUtils.ToObjectList( value);
+
+                        Object firstValue = valueList.get(0);
+                        StrUtils.emObjType objType = StrUtils.getObjectType(firstValue);
+                        if (valueList.size() == 2 &&  objType == StrUtils.emObjType.Obj_Str
+                                && StrUtils.isValidDate((String) valueList.get(0))
+                                && StrUtils.isValidDate((String) valueList.get(1))) {
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                            try {
+                                Date beginDate = sdf.parse((String)valueList.get(0));
+                                Date endDate = sdf.parse((String)valueList.get(1));
+                                predicatesList.add(cb.and(cb.between(ziduanPath, beginDate, endDate)));
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            CriteriaBuilder.In<Object> in = cb.in(ziduanPath);
+                            for (Object valSta : valueList) {
+                                log.info("valSta  :" + valSta);
+                                in.value(valSta);
+                            }
+                            predicatesList.add(cb.and(in));
+                        }
+                    } else if (value.contains("*")) {
+                        value = value.replace("*", "%");
+                        predicatesList.add(cb.and(cb.like(ziduanPath, value)));
+                    } else {
+                        predicatesList.add(cb.and(cb.equal(ziduanPath, value)));
+                    }
+                }
+            }
+
+            public void addQueryObj(List<Predicate> predicatesList, CriteriaBuilder cb,Root<T> root,String supperObjFieldName,
+                                    Object queryObj)
+            {
+                Field[] fieldArray = queryObj.getClass().getDeclaredFields();
+                for (Field f : fieldArray) {
+
+                    if(f.getName().contentEquals("page") || f.getName().contentEquals("rows"))
+                    {
+                        continue;
+                    }
+                    if(f.getType().getName().contains("com."))
+                    {
+                        try {
+                            Object objVal = (Object) ReflectUtils.getField(queryObj,f.getName());
+                            if(objVal != null)
+                            {
+                                String objFieldName = f.getName();
+                                this.addQueryObj(predicatesList,cb,root,objFieldName,objVal);
+                            }
+
+
+                        } catch (NoSuchFieldException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else
+                    {
+                        try {
+                            String value = null;
+                            try {
+                                value = (String) ReflectUtils.getField(queryObj,f.getName());
+                            } catch (NoSuchFieldException e) {
+                                e.printStackTrace();
+                            }
+                            log.info("field name:" + f.getName() + ",value:" + value);
+                            if(value != null)
+                            {
+                                String ziduanName =f.getName();
+                                if(!supperObjFieldName.isEmpty())
+                                {
+                                    ziduanName = supperObjFieldName  +"."+ziduanName;
+                                }
+                                this.addQueryCond(predicatesList,cb,root,ziduanName,value);
+                            }
+
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+                }
+            }
+
             //toPredicate就是查询条件
             //root根对象表示实体类,要查询的类型,query所需要添加查询条件,cb构建Predicate
             @Override
@@ -144,67 +246,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
                 // TODO Auto-generated method stub
                 List<Predicate> predicatesList = new ArrayList<>();
 
-              // Object x = root.get("users.uuid");
-
-               // final Path<Person> per = root.<Users> get("person");
-
-                Field[] fieldArray = queryObj.getClass().getDeclaredFields();
-                for (Field f : fieldArray) {
-
-
-                    if(f.getName().contentEquals("page") || f.getName().contentEquals("rows"))
-                    {
-                        continue;
-                    }
-
-                    try {
-                        String value = null;
-                        try {
-                            value = (String) ReflectUtils.getField(queryObj,f.getName());
-                        } catch (NoSuchFieldException e) {
-                            e.printStackTrace();
-                        }
-                        log.info("field name:" + f.getName() + ",value:" + value);
-                        if(value != null)
-                        {
-                            if (value.contains("[")) {
-                                List<Object> valueList = GsonUtils.ToObjectList( value);
-
-                                Object firstValue = valueList.get(0);
-                                StrUtils.emObjType objType = StrUtils.getObjectType(firstValue);
-                                if (valueList.size() == 2 &&  objType == StrUtils.emObjType.Obj_Str
-                                && StrUtils.isValidDate((String) valueList.get(0))
-                                        && StrUtils.isValidDate((String) valueList.get(1))) {
-                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                                    try {
-                                        Date beginDate = sdf.parse((String)valueList.get(0));
-                                        Date endDate = sdf.parse((String)valueList.get(1));
-                                        predicatesList.add(cb.and(cb.between(root.get(f.getName()), beginDate, endDate)));
-                                    } catch (ParseException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else {
-                                    CriteriaBuilder.In<Object> in = cb.in(root.get(f.getName()));
-                                    for (Object valSta : valueList) {
-                                        log.info("valSta  :" + valSta);
-                                        in.value(valSta);
-                                    }
-                                    predicatesList.add(cb.and(in));
-                                }
-                            } else if (value.contains("*")) {
-                                value = value.replace("*", "%");
-                                predicatesList.add(cb.and(cb.like(root.get(f.getName()), value)));
-                            } else {
-                                predicatesList.add(cb.and(cb.equal(root.get(f.getName()), value)));
-                            }
-                        }
-
-
-
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    }
-                }
+                this.addQueryObj(predicatesList,cb,root,"",queryObj);
                 return cb.and(predicatesList.toArray(new Predicate[predicatesList.size()]));
             }
         };

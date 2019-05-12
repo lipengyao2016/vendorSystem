@@ -41,7 +41,8 @@ public class UserRoleController {
 
     @RequestMapping(value = "/api/{ver}/userRoleMemberShips", method = {RequestMethod.GET})
     @ResponseBody
-    public ListResponse<UserRoleMemberShips> listuserRoleMemberShips(@PathVariable("ver") String version, UserRoleQueryVO userRoleQueryvo) {
+    public ListResponse<UserRoleMemberShips> listuserRoleMemberShips(@PathVariable("ver") String version
+            , UserRoleQueryVO userRoleQueryvo) {
         log.info(",version:" + version);
         log.info("User  :" + GsonUtils.ToJson(userRoleQueryvo, UserRoleQueryVO.class));
         return userRoleMemberShipservice.list(userRoleQueryvo);
