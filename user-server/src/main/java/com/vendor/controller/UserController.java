@@ -2,6 +2,7 @@ package com.vendor.controller;
 
 import com.vendor.dao.UserDao;
 import com.vendor.entity.ListResponse;
+import com.vendor.entity.UserRoleOrgs;
 import com.vendor.entity.Users;
 import com.vendor.queryvo.UserCreateVo;
 import com.vendor.queryvo.UserQueryVo;
@@ -16,6 +17,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.List;
 import java.util.*;
 
 @RestController
@@ -86,5 +88,12 @@ public class UserController {
         return UserService.delete(UserUUID);
     }
 
+
+    @RequestMapping(value = "/api/{ver}/userRoleOrgs", method = {RequestMethod.GET})
+    @ResponseBody
+    public ListResponse<UserRoleOrgs> findUserListByOrgaUUID(@PathVariable("ver") String version, String orgaUUID, Integer page, Integer rows) {
+        log.info(",version:" + version);
+        return UserService.findUserListByOrgaUUID(orgaUUID,page,rows);
+    }
 
 }
