@@ -1,5 +1,7 @@
 package com.vendor.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.vendor.entity.ListResponse;
 import com.vendor.model.Roles;
 import com.vendor.queryvo.RoleQueryVo;
@@ -57,10 +59,13 @@ public class RoleController {
 
     @RequestMapping(value = "/api/{ver}/roles", method = {RequestMethod.GET})
     @ResponseBody
-    public ListResponse<Roles> listRoles(@PathVariable("ver") String version, RoleQueryVo role) {
+    public ListResponse<Roles> listRoles(@PathVariable("ver") String version, RoleQueryVo role
+    , Integer page, Integer rows) {
         log.info(",version:" + version);
         log.info("role  :" + GsonUtils.ToJson(role, RoleQueryVo.class));
-        return rolexxService.list(role);
+
+        ListResponse<Roles> t1 = rolexxService.list(role,page,rows);
+        return t1;
     }
 
     @RequestMapping(value = "/api/{ver}/roles/{roleUUID}", method = {RequestMethod.POST})

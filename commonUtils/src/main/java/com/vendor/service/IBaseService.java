@@ -9,7 +9,7 @@ import java.util.List;
 public interface IBaseService<T,QY_T> {
      public T create(T obj) ;
      public  T get(String uuid);
-     public ListResponse<T> list(QY_T queryObj);
+     public ListResponse<T> list(QY_T queryObj , Integer page, Integer rows);
      public  T update(String uuid, T updateObj) throws DataNotFoundException;
      public  T delete(String uuid);
 

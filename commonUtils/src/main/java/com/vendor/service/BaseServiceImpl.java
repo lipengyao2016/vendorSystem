@@ -109,8 +109,8 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
     }
 
 
-    public ListResponse<T> list(Object queryObj) {
-        Integer page = null;
+    public ListResponse<T> list(Object queryObj, Integer page, Integer rows) {
+       /* Integer page = null;
         Integer rows = null;
         try {
             page = (Integer) ReflectUtils.getField(queryObj,"page");
@@ -120,7 +120,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-
+*/
 
         Pageable pageable= null;
         if(page == null)

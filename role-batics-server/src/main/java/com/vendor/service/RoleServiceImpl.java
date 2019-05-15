@@ -1,6 +1,8 @@
 package com.vendor.service;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.vendor.entity.ListResponse;
 
 import com.vendor.mapper.RolesMapper;
@@ -67,7 +69,9 @@ public class RoleServiceImpl   implements  IRoleService{
     }
 
     @Override
-    public ListResponse<Roles> list(RoleQueryVo queryObj) {
+    public ListResponse<Roles> list(RoleQueryVo queryObj , Integer page, Integer rows) {
+
+        PageHelper.startPage(page -1, rows);
 
         RolesExample example = new RolesExample();
         RolesExample.Criteria criteria = example.createCriteria();
@@ -204,14 +208,16 @@ public class RoleServiceImpl   implements  IRoleService{
                 }
             }
         }
+
         List<Roles> roles = this.roleDao.selectByExample(example);
 
+        PageInfo<Roles> pageInfo=new PageInfo<>(roles);
         ListResponse response = new ListResponse();
-        response.setItems(roles);
-        response.setCurrentPage(1);
-        response.setPageSize(10);
-        response.setTotalSize(roles.size());
-        response.setTotalPageCount(1);
+        response.setItems(pageInfo.getList());
+        response.setTotalSize( ((Long) pageInfo.getTotal()).intValue() );
+        response.setTotalPageCount(pageInfo.getPages());
+        response.setPageSize(rows);
+        response.setCurrentPage(page);
 
         return  response;
 
