@@ -1,8 +1,10 @@
 package com.vendor.service;
 
 import com.vendor.dao.RoleDao;
+import com.vendor.entity.ListResponse;
 import com.vendor.entity.Roles;
 import com.vendor.queryvo.RoleQueryVo;
+import com.vendor.utils.DataNotFoundException;
 import com.vendor.utils.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -53,7 +55,7 @@ public class RoleServiceImpl   implements  IRoleService{
     }
 
     @Override
-    public List<Roles> list(RoleQueryVo queryObj) {
+    public ListResponse<Roles> list(RoleQueryVo queryObj) {
         return this.baseService.list(queryObj);
     }
 
@@ -65,5 +67,10 @@ public class RoleServiceImpl   implements  IRoleService{
     @Override
     public Roles delete(String uuid) {
         return this.baseService.delete(uuid);
+    }
+
+    @Override
+    public Roles update(Roles updateObj) throws DataNotFoundException {
+        return null;
     }
 }

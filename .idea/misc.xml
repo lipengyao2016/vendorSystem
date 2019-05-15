@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/role-server/pom.xml" />
         <option value="$PROJECT_DIR$/commonUtils/pom.xml" />
         <option value="$PROJECT_DIR$/user-server/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/role-batics-server/pom.xml" />
       </list>
     </option>
   </component>

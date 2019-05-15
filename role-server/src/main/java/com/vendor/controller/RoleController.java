@@ -1,6 +1,7 @@
 package com.vendor.controller;
 
 import com.vendor.dao.RoleDao;
+import com.vendor.entity.ListResponse;
 import com.vendor.entity.Roles;
 import com.vendor.queryvo.RoleQueryVo;
 import com.vendor.service.IRoleService;
@@ -70,7 +71,7 @@ public class RoleController {
 
     @RequestMapping(value = "/api/{ver}/roles", method = {RequestMethod.GET})
     @ResponseBody
-    public List<Roles> listRoles(@PathVariable("ver") String version, RoleQueryVo role) {
+    public ListResponse<Roles> listRoles(@PathVariable("ver") String version, RoleQueryVo role) {
         log.info(",version:" + version);
         log.info("role  :" + GsonUtils.ToJson(role, RoleQueryVo.class));
         return rolexxService.list(role);
