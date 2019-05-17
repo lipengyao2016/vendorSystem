@@ -116,6 +116,8 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
+  
+  
   <insert id="insert" parameterType="com.vendor.model.Roles" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
@@ -129,6 +131,29 @@
       #{status,jdbcType=VARCHAR}, #{createdat,jdbcType=TIMESTAMP}, #{modifiedat,jdbcType=TIMESTAMP}, 
       #{permission,jdbcType=LONGVARCHAR})
   </insert>
+  
+  
+    <insert id="batchInsert" parameterType="java.util.List" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into roles (uuid, name, description, 
+      type, ownerUUID, ownerType, 
+      status, createdAt, modifiedAt, 
+      permission)
+    values
+	
+	  <foreach collection ="list" item="role" index= "index" separator =",">
+        (#{role.uuid,jdbcType=VARCHAR}, #{role.name,jdbcType=VARCHAR}, #{role.description,jdbcType=VARCHAR}, 
+      #{role.type,jdbcType=VARCHAR}, #{role.owneruuid,jdbcType=VARCHAR}, #{role.ownertype,jdbcType=VARCHAR}, 
+      #{role.status,jdbcType=VARCHAR}, #{role.createdat,jdbcType=TIMESTAMP}, #{role.modifiedat,jdbcType=TIMESTAMP}, 
+      #{role.permission,jdbcType=LONGVARCHAR})
+       </foreach >
+
+	
+  </insert>
+  
+  
   <insert id="insertSelective" parameterType="com.vendor.model.Roles" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()

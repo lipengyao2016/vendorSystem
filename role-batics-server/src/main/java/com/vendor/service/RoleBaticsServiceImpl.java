@@ -4,7 +4,6 @@ package com.vendor.service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.vendor.entity.ListResponse;
-
 import com.vendor.mapper.RolesMapper;
 import com.vendor.model.Roles;
 import com.vendor.model.RolesExample;
@@ -15,65 +14,50 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.Path;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
-import java.sql.Ref;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-//@Service
-public class RoleServiceImpl   implements  IRoleService{
+@Service
+public class RoleBaticsServiceImpl implements  IRoleService{
 
-    private Log log = LogFactory.getLog(RoleServiceImpl.class);
+    private Log log = LogFactory.getLog(RoleBaticsServiceImpl.class);
 
     private RolesMapper roleDao;
+    private IBaseService<Roles,RoleQueryVo> baseService;
 
-    public  RoleServiceImpl()
+    public RoleBaticsServiceImpl()
     {
         System.out.println("RoleServiceImpl init");
     }
 
     @Autowired(required = true)
-    public  RoleServiceImpl(RolesMapper roleDao)
+    public RoleBaticsServiceImpl(RolesMapper roleDao)
     {
-        Class mapperCls = roleDao.getClass();
-        log.info(" roleDao:" + mapperCls.getName());
         this.roleDao = roleDao;
+        this.baseService = new BaseMyBaticsServiceImpl<>(this.roleDao,Roles.class,RolesExample.class);
     }
 
 
     @Override
     public Roles create(Roles obj) {
-        DBEntityUtils.preCreate(obj);
-         this.roleDao.insert(obj);
-         return this.get(obj.getUuid());
+         return this.baseService.create(obj);
     }
 
     @Override
     public Roles get(String uuid) {
-        RolesExample example = new RolesExample();
-        RolesExample.Criteria criteria = example.createCriteria();
-        criteria.andUuidEqualTo(uuid);
-        List<Roles> roles = this.roleDao.selectByExample(example);
-        if(roles.size() > 0)
-        {
-            return  roles.get(0);
-        }
-        else
-        {
-            return null;
-        }
+         return this.baseService.get(uuid);
     }
 
     @Override
     public ListResponse<Roles> list(RoleQueryVo queryObj , Integer page, Integer rows) {
 
-        PageHelper.startPage(page -1, rows);
+        return this.baseService.list(queryObj,page,rows);
+       /* PageHelper.startPage(page -1, rows);
 
         RolesExample example = new RolesExample();
         RolesExample.Criteria criteria = example.createCriteria();
@@ -221,28 +205,35 @@ public class RoleServiceImpl   implements  IRoleService{
         response.setPageSize(rows);
         response.setCurrentPage(page);
 
-        return  response;
+        return  response;*/
 
     }
 
     @Override
     public Roles update(String uuid, Roles updateObj) {
-        RolesExample example = new RolesExample();
+
+        return this.baseService.update(uuid,updateObj);
+
+     /*   RolesExample example = new RolesExample();
         RolesExample.Criteria criteria = example.createCriteria();
         criteria.andUuidEqualTo(uuid);
         DBEntityUtils.preUpdate(updateObj);
         this.roleDao.updateByExampleSelective(updateObj,example);
 
-        return this.get(uuid);
+        return this.get(uuid);*/
     }
 
     @Override
     public Roles delete(String uuid) {
-        RolesExample example = new RolesExample();
+
+        return this.baseService.delete(uuid);
+
+   /*     RolesExample example = new RolesExample();
         RolesExample.Criteria criteria = example.createCriteria();
         criteria.andUuidEqualTo(uuid);
+
          this.roleDao.deleteByExample(example);
-         return null;
+         return null;*/
     }
 
     @Override
@@ -252,11 +243,11 @@ public class RoleServiceImpl   implements  IRoleService{
 
     @Override
     public int batchInsert(List<Roles> record) {
-        return 0;
+        return this.baseService.batchInsert(record);
     }
 
     @Override
     public int batchDelete(List<String> uuids) {
-        return 0;
+        return this.baseService.batchDelete(uuids);
     }
 }

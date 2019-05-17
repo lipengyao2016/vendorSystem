@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 //@RequestMapping("/order")
 public class RoleController {
@@ -41,6 +43,18 @@ public class RoleController {
        Roles newRole = (Roles) rolexxService.create(role);
        return newRole;
         //return  null;
+    }
+
+    @RequestMapping(value = "/api/{ver}/roles/batchCreate", method = {RequestMethod.POST})
+    @ResponseBody
+    @ResponseStatus(code= HttpStatus.CREATED)
+    public Integer batchCreateRole(@PathVariable("ver") String version, @RequestBody List<Roles> roles) {
+
+        log.info( ",version:" + version);
+
+        //  Roles newRole = (Roles) this.getRoleService().create(role);
+
+       return  rolexxService.batchInsert(roles);
     }
 
 
@@ -89,100 +103,15 @@ public class RoleController {
         return rolexxService.delete(roleUUID);
     }
 
-    /*@RequestMapping(value = "/api/{ver}/roles", method = {RequestMethod.GET})
+
+    @RequestMapping(value = "/api/{ver}/roles/batchDelete", method = {RequestMethod.POST})
     @ResponseBody
-    public List<Roles> listRoles(@PathVariable("ver") String version, RoleQueryVo role) {
+    @ResponseStatus(code= HttpStatus.NO_CONTENT)
+    public Integer batchDeleteRoles(@PathVariable("ver") String version, @RequestBody List<String> roleUUIDs) {
         log.info(",version:" + version);
-        log.info("role  :" + GsonUtils.ToJson(role, RoleQueryVo.class));
-        List<Roles> findRoles = null;
+        log.info("roleUUIDs  :" + roleUUIDs);
 
-*//*        ExampleMatcher matcher = ExampleMatcher.matching() //构建对象
-                .withMatcher("name", ExampleMatcher.GenericPropertyMatchers.contains());
-        //创建实例
-        Example<Roles> ex = Example.of(role, matcher);
-        findRoles = roleService.findAll(ex);*//*
-
-        Specification<Roles> specification = new Specification<Roles>() {
-            //toPredicate就是查询条件
-            //root根对象表示实体类,要查询的类型,query所需要添加查询条件,cb构建Predicate
-            @Override
-            public Predicate toPredicate(Root<Roles> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                // TODO Auto-generated method stub
-
-                List<Predicate> predicatesList = new ArrayList<>();
-
-                if (role.getName() != null) {
-                    predicatesList.add(cb.and(cb.like(root.get("name"), "%" + role.getName() + "%")));
-                }
-
-                if (role.getUuid() != null) {
-                    predicatesList.add(cb.and(cb.equal(root.get("uuid"), role.getUuid())));
-                }
-
-                if (role.getStatus() != null) {
-                    String status  =role.getStatus();
-                    List<String>  statuss= (List<String>) GsonUtils.ToObject(status,List.class);
-                    log.info("statuss  :" + GsonUtils.ToJson(statuss, List.class));
-                    CriteriaBuilder.In<String> in = cb.in(root.get("status"));
-                    for (String valSta:statuss) {
-                        log.info("valSta  :" + valSta);
-                        in.value(valSta);
-                    }
-                    predicatesList.add(cb.and(in));
-                }
-
-                if (role.getCreatedAt() != null) {
-                    String createAtStr  =role.getCreatedAt();
-                    List<String>  createAts= (List<String>) GsonUtils.ToObject(createAtStr,List.class);
-                    log.info("createAtStr  :" + GsonUtils.ToJson(createAts, List.class));
-
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    try {
-                        Date beginDate = sdf.parse(createAts.get(0));
-                        Date endDate = sdf.parse(createAts.get(1));
-                        predicatesList.add(cb.and(cb.between(root.get("createdAt"),beginDate ,endDate )));
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-
-                return cb.and(predicatesList.toArray(new Predicate[predicatesList.size()]));
-            }
-        };
-        findRoles = roleService.findAll(specification);
-
-        return findRoles;
+        return rolexxService.batchDelete(roleUUIDs);
     }
-
-
-
-
-
-    @RequestMapping(value = "/api/{ver}/roles/{roleUUID}", method = {RequestMethod.POST})
-    @ResponseBody
-    public Roles updateRoles(@PathVariable("ver") String version, @PathVariable("roleUUID") String roleUUID,
-                             @RequestBody Roles updateRole   ) {
-        log.info(",version:" + version);
-        log.info("roleUUID  :" + roleUUID);
-
-        Roles role = new Roles();
-        role.setUuid(roleUUID);
-
-        ExampleMatcher matcher = ExampleMatcher.matching() //构建对象
-                .withMatcher("name", ExampleMatcher.GenericPropertyMatchers.contains());
-        //创建实例
-        Example<Roles> ex = Example.of(role, matcher);
-
-        List<Roles> findRoles = roleService.findAll(ex);
-
-        Roles oldRole = findRoles.get(0);
-        RoleController.copyPropertiesIgnoreNull(updateRole,oldRole);
-        roleService.save(oldRole);
-
-        return oldRole;
-    }
-  */
-
 
 }

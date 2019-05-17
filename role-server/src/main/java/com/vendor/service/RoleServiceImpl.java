@@ -55,8 +55,8 @@ public class RoleServiceImpl   implements  IRoleService{
     }
 
     @Override
-    public ListResponse<Roles> list(RoleQueryVo queryObj) {
-        return this.baseService.list(queryObj);
+    public ListResponse<Roles> list(RoleQueryVo queryObj, Integer page, Integer rows) {
+        return this.baseService.list(queryObj,page,rows);
     }
 
     @Override

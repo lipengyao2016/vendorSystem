@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class RoleBaticsServerApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(RoleBaticsServerApplication.class, args);
 	}
 

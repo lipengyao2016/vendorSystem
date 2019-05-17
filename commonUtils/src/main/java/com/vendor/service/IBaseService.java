@@ -14,4 +14,8 @@ public interface IBaseService<T,QY_T> {
      public  T delete(String uuid);
 
      public  T update(T updateObj) throws DataNotFoundException;
+
+     public int batchInsert(List<T> record);
+
+     public int batchDelete(List<String> uuids);
 }

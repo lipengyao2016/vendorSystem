@@ -23,4 +23,6 @@ public interface RolesMapper {
     int updateByExampleWithBLOBs(@Param("record") Roles record, @Param("example") RolesExample example);
 
     int updateByExample(@Param("record") Roles record, @Param("example") RolesExample example);
+
+    int batchInsert(List<Roles> record);
 }

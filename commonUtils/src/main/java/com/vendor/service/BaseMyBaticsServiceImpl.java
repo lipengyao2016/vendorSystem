@@ -1,82 +1,134 @@
 package com.vendor.service;
 
-
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.vendor.entity.ListResponse;
-
-import com.vendor.mapper.RolesMapper;
-import com.vendor.model.Roles;
-import com.vendor.model.RolesExample;
-import com.vendor.queryvo.RoleQueryVo;
 import com.vendor.utils.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.Path;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Type;
-import java.sql.Ref;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-//@Service
-public class RoleServiceImpl   implements  IRoleService{
 
-    private Log log = LogFactory.getLog(RoleServiceImpl.class);
+public class BaseMyBaticsServiceImpl<T, QY_T> implements  IBaseService{
 
-    private RolesMapper roleDao;
 
-    public  RoleServiceImpl()
+    private Object dbProxy;
+
+    private Log log = LogFactory.getLog(BaseServiceImpl.class);
+    private Class entityClass;
+    private Class dbExampleCls;
+
+    public BaseMyBaticsServiceImpl()
     {
         System.out.println("RoleServiceImpl init");
     }
 
     @Autowired(required = true)
-    public  RoleServiceImpl(RolesMapper roleDao)
+    public BaseMyBaticsServiceImpl(Object dbProxy, Class entityClass,Class dbExampleCls)
     {
-        Class mapperCls = roleDao.getClass();
-        log.info(" roleDao:" + mapperCls.getName());
-        this.roleDao = roleDao;
+        this.dbProxy = dbProxy;
+        this.entityClass = entityClass;
+        this.dbExampleCls =dbExampleCls;
     }
 
 
     @Override
-    public Roles create(Roles obj) {
+    public Object create(Object obj) {
         DBEntityUtils.preCreate(obj);
-         this.roleDao.insert(obj);
-         return this.get(obj.getUuid());
+        ReflectUtils.callMethod(this.dbProxy,"insert",obj);
+        try {
+            String uuid = (String) ReflectUtils.getField(obj,"uuid");
+            return  this.get(uuid);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return  null;
+    }
+
+    public Object createExample() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+       return   ReflectUtils.createInstance(this.dbExampleCls);
+    }
+
+    public Object createCriteria(Object example)
+    {
+        return  ReflectUtils.callMethod(example,"createCriteria");
+    }
+
+    public void addQuery(Object criteria,String methodName, Object... args)
+    {
+        ReflectUtils.callMethod(criteria,methodName,args);
+    }
+
+    public Object executeDBQuery(String methodName, Object... args)
+    {
+       return ReflectUtils.callMethod(this.dbProxy,methodName,args);
     }
 
     @Override
-    public Roles get(String uuid) {
-        RolesExample example = new RolesExample();
-        RolesExample.Criteria criteria = example.createCriteria();
-        criteria.andUuidEqualTo(uuid);
-        List<Roles> roles = this.roleDao.selectByExample(example);
-        if(roles.size() > 0)
-        {
-            return  roles.get(0);
+    public Object get(String uuid) {
+        try {
+            Object example = this.createExample();
+            Object criteria = this.createCriteria(example);
+            this.addQuery(criteria,"andUuidEqualTo",uuid);
+
+            List roles = (List) this.executeDBQuery("selectByExample",example);
+            if(roles.size() > 0)
+            {
+                return  roles.get(0);
+            }
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
         }
-        else
-        {
-            return null;
-        }
+
+        return null;
     }
 
     @Override
-    public ListResponse<Roles> list(RoleQueryVo queryObj , Integer page, Integer rows) {
+    public ListResponse list(Object queryObj, Integer page, Integer rows) {
+
+        if(page == null)
+        {
+            page = 1;
+        }
+        if(rows == null)
+        {
+            rows = 10000;
+        }
 
         PageHelper.startPage(page -1, rows);
 
-        RolesExample example = new RolesExample();
-        RolesExample.Criteria criteria = example.createCriteria();
+        Object example = null;
+        try {
+            example = this.createExample();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        Object criteria = this.createCriteria(example);
 
         Field[] fieldArray = queryObj.getClass().getDeclaredFields();
         for (Field f : fieldArray) {
@@ -105,9 +157,9 @@ public class RoleServiceImpl   implements  IRoleService{
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     }
-                   // log.info("field name:" + f.getName() + ",value:" + value);
+                    // log.info("field name:" + f.getName() + ",value:" + value);
 
-                    Field curField = ReflectUtils.getFieldInfo(Roles.class,f.getName());
+                    Field curField = ReflectUtils.getFieldInfo(this.entityClass,f.getName());
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     if (value != null && curField != null) {
                         String fieldName = f.getName();
@@ -149,7 +201,7 @@ public class RoleServiceImpl   implements  IRoleService{
                                 Type t1 = curField.getType();
                                 String fieldLikeMethodName = "and" + f.getName() + "In";
                                 log.info("field type:" + curField.getType() + ",class:"+
-                                Integer.class.getName());
+                                        Integer.class.getName());
 
                                 if( curField.getType().getName().equals(Integer.class.getName()))
                                 {
@@ -211,9 +263,9 @@ public class RoleServiceImpl   implements  IRoleService{
             }
         }
 
-        List<Roles> roles = this.roleDao.selectByExample(example);
+        List roles = (List) this.executeDBQuery("selectByExample",example);
 
-        PageInfo<Roles> pageInfo=new PageInfo<>(roles);
+        PageInfo pageInfo=new PageInfo<>(roles);
         ListResponse response = new ListResponse();
         response.setItems(pageInfo.getList());
         response.setTotalSize( ((Long) pageInfo.getTotal()).intValue() );
@@ -222,41 +274,89 @@ public class RoleServiceImpl   implements  IRoleService{
         response.setCurrentPage(page);
 
         return  response;
-
     }
 
     @Override
-    public Roles update(String uuid, Roles updateObj) {
-        RolesExample example = new RolesExample();
-        RolesExample.Criteria criteria = example.createCriteria();
-        criteria.andUuidEqualTo(uuid);
-        DBEntityUtils.preUpdate(updateObj);
-        this.roleDao.updateByExampleSelective(updateObj,example);
+    public Object update(String uuid, Object updateObj) throws DataNotFoundException {
 
-        return this.get(uuid);
+        try {
+            Object example = this.createExample();
+            Object criteria = this.createCriteria(example);
+            this.addQuery(criteria,"andUuidEqualTo",uuid);
+            DBEntityUtils.preUpdate(updateObj);
+            this.executeDBQuery("updateByExampleSelective",updateObj,example);
+            return this.get(uuid);
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return  null;
+        //this.roleDao.updateByExampleSelective(updateObj,example);
     }
 
     @Override
-    public Roles delete(String uuid) {
-        RolesExample example = new RolesExample();
-        RolesExample.Criteria criteria = example.createCriteria();
-        criteria.andUuidEqualTo(uuid);
-         this.roleDao.deleteByExample(example);
-         return null;
-    }
+    public Object delete(String uuid) {
 
-    @Override
-    public Roles update(Roles updateObj) throws DataNotFoundException {
+        Object example = null;
+        try {
+            example = this.createExample();
+            Object criteria = this.createCriteria(example);
+            this.addQuery(criteria,"andUuidEqualTo",uuid);
+            this.executeDBQuery("deleteByExample",example);
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+
         return null;
     }
 
     @Override
-    public int batchInsert(List<Roles> record) {
-        return 0;
+    public Object update(Object updateObj) throws DataNotFoundException {
+        return null;
     }
 
     @Override
-    public int batchDelete(List<String> uuids) {
-        return 0;
+    public int batchInsert(List record) {
+       // List<Object> newRecords = new ArrayList();
+        for(Object obj:record)
+        {
+            DBEntityUtils.preCreate(obj);
+           // newRecords.add(obj);
+        }
+        int nRet = (int) ReflectUtils.callMethod(this.dbProxy,"batchInsert",record);
+        return  nRet;
+    }
+
+    @Override
+    public int batchDelete(List uuids) {
+        Object example = null;
+        try {
+            example = this.createExample();
+            Object criteria = this.createCriteria(example);
+            this.addQuery(criteria,"andUuidIn",uuids);
+            this.executeDBQuery("deleteByExample",example);
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return  0;
     }
 }

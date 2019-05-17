@@ -24,8 +24,6 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
 
 
     private JpaRepository m_jpaRepository;
-
-
     private JpaSpecificationExecutor m_jpaSpecificationExecutor;
     private Class entityClass;
 
@@ -305,5 +303,15 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
     @Override
     public Object update(Object updateObj) throws DataNotFoundException {
         return m_jpaRepository.save(updateObj);
+    }
+
+    @Override
+    public int batchInsert(List record) {
+        return 0;
+    }
+
+    @Override
+    public int batchDelete(List uuids) {
+        return 0;
     }
 }
