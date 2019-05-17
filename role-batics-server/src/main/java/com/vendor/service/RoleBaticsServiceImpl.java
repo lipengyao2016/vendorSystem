@@ -250,4 +250,9 @@ public class RoleBaticsServiceImpl implements  IRoleService{
     public int batchDelete(List<String> uuids) {
         return this.baseService.batchDelete(uuids);
     }
+
+    @Override
+    public Roles batchUpdate(List<String> uuids, Roles updateObj) throws DataNotFoundException {
+        return this.baseService.batchUpdate(uuids,updateObj);
+    }
 }

@@ -311,6 +311,11 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
     }
 
     @Override
+    public Object batchUpdate(List uuids, Object updateObj) throws DataNotFoundException {
+        return null;
+    }
+
+    @Override
     public int batchDelete(List uuids) {
         return 0;
     }

@@ -32,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleBaticsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="236">
-              <caret line="250" column="0" lean-forward="false" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
+              <caret line="255" column="0" lean-forward="false" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
               <folding>
                 <element signature="e#996#997#0" expanded="true" />
                 <element signature="e#1054#1055#0" expanded="true" />
@@ -42,18 +42,9 @@
                 <element signature="e#1494#1495#0" expanded="true" />
                 <element signature="e#10460#10461#0" expanded="true" />
                 <element signature="e#10519#10520#0" expanded="true" />
+                <element signature="e#10583#10584#0" expanded="true" />
                 <element signature="e#10641#10642#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RolesExample.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/model/RolesExample.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="217" column="24" lean-forward="false" selection-start-line="217" selection-start-column="24" selection-end-line="217" selection-end-column="24" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -61,8 +52,8 @@
       <file leaf-file-name="RoleServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="252" column="13" lean-forward="true" selection-start-line="252" selection-start-column="13" selection-end-line="252" selection-end-column="13" />
+            <state relative-caret-position="293">
+              <caret line="264" column="8" lean-forward="false" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="20" />
               <folding>
                 <element signature="e#10706#10707#0" expanded="true" />
                 <element signature="e#10730#10731#0" expanded="true" />
@@ -73,21 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRoleService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/IRoleService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BaseMyBaticsServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/BaseMyBaticsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="352" column="32" lean-forward="true" selection-start-line="352" selection-start-column="32" selection-end-line="352" selection-end-column="32" />
+            <state relative-caret-position="-297">
+              <caret line="347" column="0" lean-forward="false" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#902#903#0" expanded="true" />
@@ -99,21 +80,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IBaseService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/IBaseService.java">
+      <file leaf-file-name="DBEntityUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/DBEntityUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="417">
+              <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoleController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IBaseService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/IBaseService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Readme" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/role-batics-server/Readme">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
+            <state relative-caret-position="554">
+              <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Roles.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/model/Roles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GsonUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/GsonUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -123,33 +144,13 @@
         <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/BaseServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="768">
-              <caret line="314" column="8" lean-forward="false" selection-start-line="314" selection-start-column="8" selection-end-line="314" selection-end-column="17" />
+              <caret line="314" column="8" lean-forward="false" selection-start-line="314" selection-start-column="8" selection-end-line="314" selection-end-column="20" />
               <folding>
                 <element signature="e#11270#11271#0" expanded="true" />
                 <element signature="e#11294#11295#0" expanded="true" />
-                <element signature="e#11350#11351#0" expanded="true" />
-                <element signature="e#11374#11375#0" expanded="true" />
+                <element signature="e#11483#11484#0" expanded="true" />
+                <element signature="e#11507#11508#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RolesMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/mapper/RolesMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="40" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -178,6 +179,7 @@
       <find>query</find>
       <find>cb</find>
       <find>Equal</find>
+      <find>updateByExampleSelective</find>
     </findStrings>
     <replaceStrings>
       <replace>/users</replace>
@@ -206,7 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/role-server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/DBEntityUtils.java" />
         <option value="$PROJECT_DIR$/user-server/src/main/java/com/vendor/entity/UserOrganizations.java" />
         <option value="$PROJECT_DIR$/user-server/src/main/java/com/vendor/queryvo/UserCreateVo.java" />
@@ -235,7 +236,6 @@
         <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/IRoleService.java" />
         <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/model/Roles.java" />
         <option value="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/ReflectUtils.java" />
-        <option value="$PROJECT_DIR$/role-batics-server/Readme" />
         <option value="$PROJECT_DIR$/role-batics-server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/role-batics-server/src/main/resources/application.yaml" />
         <option value="$PROJECT_DIR$/role-batics-server/pom.xml" />
@@ -256,7 +256,9 @@
         <option value="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/BaseMyBaticsServiceImpl.java" />
         <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleBaticsServiceImpl.java" />
         <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/GsonUtils.java" />
         <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/role-batics-server/Readme" />
       </list>
     </option>
   </component>
@@ -297,14 +299,14 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
     <option name="height" value="970" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages ProjectPane="false" />
       <showMembers />
       <showModules />
@@ -326,6 +328,10 @@
             <path>
               <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="commonUtils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="role-batics-server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -370,6 +376,12 @@
               <item name="com.vendor" type="1f31426a:PackageElementNode" />
               <item name="controller" type="1f31426a:PackageElementNode" />
               <item name="RoleController" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
+              <item name="role-batics-server" type="616d4139:PackageViewModuleNode" />
+              <item name="com.vendor" type="1f31426a:PackageElementNode" />
+              <item name="queryvo" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
@@ -742,7 +754,7 @@
       <workItem from="1557888935052" duration="14732000" />
       <workItem from="1557919471359" duration="8719000" />
       <workItem from="1558002397195" duration="2997000" />
-      <workItem from="1558073913025" duration="7916000" />
+      <workItem from="1558073913025" duration="9869000" />
     </task>
     <servers />
   </component>
@@ -761,7 +773,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98736000" />
+    <option name="totallyTimeSpent" value="100689000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,7 +785,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -784,7 +797,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4098737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4098737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32376578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1129,8 +1142,20 @@
           <properties />
           <option name="timeStamp" value="82" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java</url>
+          <line>121</line>
+          <properties />
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java</url>
+          <line>125</line>
+          <properties />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="83" />
+      <option name="time" value="85" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -1139,13 +1164,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/role-server/src/main/java/com/vendor/entity/Roles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="61" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -1208,14 +1226,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/GsonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1325,13 +1335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/model/Roles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/ReflectUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1825">
@@ -1414,14 +1417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/role-batics-server/Readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commonUtils/commonUtils.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1475,32 +1470,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/mapper/RolesMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/IRoleService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="6" column="45" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/BaseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="314" column="8" lean-forward="false" selection-start-line="314" selection-start-column="8" selection-end-line="314" selection-end-column="17" />
-          <folding>
-            <element signature="e#11270#11271#0" expanded="true" />
-            <element signature="e#11294#11295#0" expanded="true" />
-            <element signature="e#11350#11351#0" expanded="true" />
-            <element signature="e#11374#11375#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1512,18 +1486,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/mapper/RolesMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/IBaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="475">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/BaseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="314" column="8" lean-forward="false" selection-start-line="314" selection-start-column="8" selection-end-line="314" selection-end-column="20" />
+          <folding>
+            <element signature="e#11270#11271#0" expanded="true" />
+            <element signature="e#11294#11295#0" expanded="true" />
+            <element signature="e#11483#11484#0" expanded="true" />
+            <element signature="e#11507#11508#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/DBEntityUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="252" column="13" lean-forward="true" selection-start-line="252" selection-start-column="13" selection-end-line="252" selection-end-column="13" />
+        <state relative-caret-position="293">
+          <caret line="264" column="8" lean-forward="false" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="20" />
           <folding>
             <element signature="e#10706#10707#0" expanded="true" />
             <element signature="e#10730#10731#0" expanded="true" />
@@ -1533,10 +1536,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/GsonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleBaticsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
-          <caret line="250" column="0" lean-forward="false" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
+          <caret line="255" column="0" lean-forward="false" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
           <folding>
             <element signature="e#996#997#0" expanded="true" />
             <element signature="e#1054#1055#0" expanded="true" />
@@ -1546,6 +1557,7 @@
             <element signature="e#1494#1495#0" expanded="true" />
             <element signature="e#10460#10461#0" expanded="true" />
             <element signature="e#10519#10520#0" expanded="true" />
+            <element signature="e#10583#10584#0" expanded="true" />
             <element signature="e#10641#10642#0" expanded="true" />
           </folding>
         </state>
@@ -1553,8 +1565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/BaseMyBaticsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="352" column="32" lean-forward="true" selection-start-line="352" selection-start-column="32" selection-end-line="352" selection-end-column="32" />
+        <state relative-caret-position="-297">
+          <caret line="347" column="0" lean-forward="false" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#902#903#0" expanded="true" />
@@ -1565,10 +1577,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/model/Roles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="114" column="5" lean-forward="true" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
+        <state relative-caret-position="554">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role-batics-server/Readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding />
         </state>
       </provider>

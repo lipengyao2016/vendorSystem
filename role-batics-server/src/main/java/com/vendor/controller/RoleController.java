@@ -114,4 +114,16 @@ public class RoleController {
         return rolexxService.batchDelete(roleUUIDs);
     }
 
+
+    @RequestMapping(value = "/api/{ver}/roles/batchUpdate", method = {RequestMethod.POST})
+    @ResponseBody
+    public Integer batchUpdateRoles(@PathVariable("ver") String version, String roleUUIDsStr,
+                             @RequestBody Roles updateRole   ) {
+        log.info(",version:" + version);
+        log.info("roleUUIDs  :" + roleUUIDsStr);
+        List  roleUUIDs = GsonUtils.ToObjectList(roleUUIDsStr);
+
+        return rolexxService.batchUpdate(roleUUIDs,updateRole) != null ? 1 : 0;
+    }
+
 }

@@ -259,4 +259,9 @@ public class RoleServiceImpl   implements  IRoleService{
     public int batchDelete(List<String> uuids) {
         return 0;
     }
+
+    @Override
+    public Roles batchUpdate(List<String> uuids, Roles updateObj) throws DataNotFoundException {
+        return null;
+    }
 }

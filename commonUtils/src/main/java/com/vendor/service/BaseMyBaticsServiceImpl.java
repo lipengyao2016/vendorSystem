@@ -340,6 +340,27 @@ public class BaseMyBaticsServiceImpl<T, QY_T> implements  IBaseService{
     }
 
     @Override
+    public Object batchUpdate(List uuids, Object updateObj) throws DataNotFoundException {
+        try {
+            Object example = this.createExample();
+            Object criteria = this.createCriteria(example);
+            this.addQuery(criteria,"andUuidIn",uuids);
+            DBEntityUtils.preUpdate(updateObj);
+            this.executeDBQuery("updateByExampleSelective",updateObj,example);
+           return updateObj;
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return  null;
+    }
+
+    @Override
     public int batchDelete(List uuids) {
         Object example = null;
         try {
