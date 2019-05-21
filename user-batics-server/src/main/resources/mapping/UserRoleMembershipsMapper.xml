@@ -99,6 +99,25 @@
     values (#{uuid,jdbcType=CHAR}, #{roleuuid,jdbcType=CHAR}, #{useruuid,jdbcType=CHAR}, 
       #{createdat,jdbcType=TIMESTAMP}, #{modifiedat,jdbcType=TIMESTAMP})
   </insert>
+  
+  
+    
+    <insert id="batchInsert" parameterType="java.util.List" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into userrolememberships (uuid, roleUuid, userUuid, 
+      createdAt, modifiedAt)
+    values
+	
+	  <foreach collection ="list" item="userrole" index= "index" separator =",">
+      (#{userrole.uuid,jdbcType=CHAR}, #{userrole.roleuuid,jdbcType=CHAR}, #{userrole.useruuid,jdbcType=CHAR}, 
+      #{userrole.createdat,jdbcType=TIMESTAMP}, #{userrole.modifiedat,jdbcType=TIMESTAMP})
+       </foreach >
+
+
+  </insert>
+  
   <insert id="insertSelective" parameterType="com.vendor.model.UserRoleMemberships">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()

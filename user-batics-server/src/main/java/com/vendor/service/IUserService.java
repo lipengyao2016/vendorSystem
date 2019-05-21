@@ -12,5 +12,7 @@ public interface IUserService extends IBaseService<Users,UserQueryVo> {
 
     public Users create(UserCreateVo userCreateVo);
 
+    public Users update(UserCreateVo userCreateVo);
+
 
 }

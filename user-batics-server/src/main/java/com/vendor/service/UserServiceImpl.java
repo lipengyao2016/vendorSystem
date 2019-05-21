@@ -10,13 +10,17 @@ import com.vendor.queryvo.UserQueryVo;
 import com.vendor.utils.BeanHelper;
 import com.vendor.utils.DBEntityUtils;
 import com.vendor.utils.DataNotFoundException;
+import com.vendor.utils.GsonUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 @Service
 public class UserServiceImpl implements  IUserService{
@@ -84,7 +88,7 @@ public class UserServiceImpl implements  IUserService{
 
     @Override
     public Users update(Users updateObj) throws DataNotFoundException {
-        return null;
+        return this.baseService.update(updateObj);
     }
 
     @Override
@@ -102,6 +106,7 @@ public class UserServiceImpl implements  IUserService{
         return this.baseService.batchUpdate(uuids,updateObj);
     }
 
+    @Transactional()
     @Override
     public Users create(UserCreateVo userCreateVo) {
         Users newUser = new Users();
@@ -109,6 +114,8 @@ public class UserServiceImpl implements  IUserService{
         {
             UserOrganizations userOrganizations = userOrganizationService.getOrCreateUserOrganization(userCreateVo.getOwnerUUID());
             newUser.setUserorganizationuuid(userOrganizations.getUuid());
+
+            log.info("userOrganizations:" + GsonUtils.ToJson(userOrganizations,UserOrganizations.class));
         }
 
         String[] excludeAtts ={"ownerUUID","roleUUID","userRoleMemberShips"};
@@ -123,10 +130,59 @@ public class UserServiceImpl implements  IUserService{
 
         if(userCreateVo.getUserRoleMemberShips().size() > 0)
         {
+            log.info("getUserRoleMemberShips:" + GsonUtils.ToJson(userCreateVo.getUserRoleMemberShips(),List.class));
             this.userRoleMembershipService.batchInsert(userCreateVo.getUserRoleMemberShips());
         }
 
+      //   throw new DataNotFoundException("7010","insert Test");
+
         Users user = this.create(newUser);
         return user;
+    }
+
+    @Override
+    public Users update(UserCreateVo userCreateVo) {
+        Users user;
+        try {
+            Users updateUser = new Users();
+
+            UserRoleMemberships queryUserRole = new UserRoleMemberships();
+            queryUserRole.setUseruuid(userCreateVo.getUuid());
+            ListResponse<UserRoleMemberships> userRoleMembershipsList = userRoleMembershipService.list(queryUserRole,1,10);
+
+            List<String> userRoleUUIDs = new ArrayList<>();
+            for(UserRoleMemberships tempUserRole :userRoleMembershipsList.getItems() )
+            {
+                userRoleUUIDs.add(tempUserRole.getUuid());
+            }
+
+            userRoleMembershipService.batchDelete(userRoleUUIDs);
+
+            String[] excludeAtts ={"roleUUID","userRoleMemberShips"};
+            BeanHelper.copyPropertiesExcludeAttr(userCreateVo,updateUser,excludeAtts);
+            DBEntityUtils.preUpdate(updateUser);
+
+            for(UserRoleMemberships userRoleMemberShips : userCreateVo.getUserRoleMemberShips())
+            {
+                DBEntityUtils.preCreate(userRoleMemberShips);
+                userRoleMemberShips.setUseruuid(updateUser.getUuid());
+            }
+
+            if(userCreateVo.getUserRoleMemberShips().size() > 0)
+            {
+                log.info("getUserRoleMemberShips:" + GsonUtils.ToJson(userCreateVo.getUserRoleMemberShips(),List.class));
+                this.userRoleMembershipService.batchInsert(userCreateVo.getUserRoleMemberShips());
+            }
+
+            log.info("updateUser:" + GsonUtils.ToJson(updateUser,Users.class));
+             user = this.update(updateUser);
+
+        }
+        catch (Exception e)
+        {
+            throw  new DataNotFoundException("7001","create error");
+        }
+        return user;
+
     }
 }

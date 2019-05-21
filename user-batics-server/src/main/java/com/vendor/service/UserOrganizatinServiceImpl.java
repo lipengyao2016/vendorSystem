@@ -13,6 +13,8 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -90,6 +92,7 @@ public class UserOrganizatinServiceImpl implements  IUserOrganizationService{
         return this.baseService.batchUpdate(uuids,updateObj);
     }
 
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     @Override
     public UserOrganizations getOrCreateUserOrganization(String ownerUUID) {
         UserOrganizations querObj = new UserOrganizations();

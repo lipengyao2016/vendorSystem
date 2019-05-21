@@ -324,7 +324,15 @@ public class BaseMyBaticsServiceImpl<T, QY_T> implements  IBaseService{
 
     @Override
     public Object update(Object updateObj) throws DataNotFoundException {
-        return null;
+        String uuid = "";
+        try {
+             uuid = (String) ReflectUtils.getField(updateObj,"uuid");
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return this.update(uuid,updateObj);
     }
 
     @Override

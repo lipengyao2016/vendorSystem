@@ -38,7 +38,7 @@ public class UserController {
     }
 
 
-   /* @RequestMapping(value = "/api/{ver}/users/{UserUUID}", method = {RequestMethod.GET})
+    @RequestMapping(value = "/api/{ver}/users/{UserUUID}", method = {RequestMethod.GET})
     @ResponseBody
     public Users getUsers(@PathVariable("ver") String version, @PathVariable("UserUUID") String UserUUID) throws  DataNotFoundException {
         log.info(",version:" + version);
@@ -56,18 +56,17 @@ public class UserController {
     public ListResponse<Users> listUsers(@PathVariable("ver") String version, UserQueryVo User) {
         log.info(",version:" + version);
         log.info("User  :" + GsonUtils.ToJson(User, UserQueryVo.class));
-        return UserService.list(User);
+        return UserService.list(User,User.getPage(),User.getRows());
     }
 
     @RequestMapping(value = "/api/{ver}/users/{UserUUID}", method = {RequestMethod.POST})
     @ResponseBody
     public Users updateUsers(@PathVariable("ver") String version, @PathVariable("UserUUID") String UserUUID,
-                             @RequestBody Users updateUser   ) {
+                             @RequestBody UserCreateVo updateUser   ) {
         log.info(",version:" + version);
         log.info("UserUUID  :" + UserUUID);
-
-
-        return UserService.update(UserUUID,updateUser);
+        updateUser.setUuid(UserUUID);
+        return UserService.update(updateUser);
     }
 
     @RequestMapping(value = "/api/{ver}/users/{UserUUID}", method = {RequestMethod.DELETE})
@@ -81,7 +80,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/api/{ver}/userRoleOrgs", method = {RequestMethod.GET})
+/*    @RequestMapping(value = "/api/{ver}/userRoleOrgs", method = {RequestMethod.GET})
     @ResponseBody
     public ListResponse<UserRoleOrgs> findUserListByOrgaUUID(@PathVariable("ver") String version, String orgaUUID, Integer page, Integer rows) {
         log.info(",version:" + version);

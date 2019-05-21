@@ -19,4 +19,6 @@ public interface UserRoleMembershipsMapper {
     int updateByExampleSelective(@Param("record") UserRoleMemberships record, @Param("example") UserRoleMembershipsCriteria example);
 
     int updateByExample(@Param("record") UserRoleMemberships record, @Param("example") UserRoleMembershipsCriteria example);
+	
+	int batchInsert(List<UserRoleMemberships> record);
 }
