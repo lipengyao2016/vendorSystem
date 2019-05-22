@@ -1,0 +1,12 @@
+http://localhost:9014/api/v1/roles
+
+{
+	"role": {
+		"name": "role55"
+	},
+
+	"user": {
+		"name": "wangfeij55",
+		"ownerUUID": "dCqavvEkybc3ZZj65Vc05g"
+	}
+}

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/commonUtils/commonUtils.iml" filepath="$PROJECT_DIR$/commonUtils/commonUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/operationapi/operationapi.iml" filepath="$PROJECT_DIR$/operationapi/operationapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform-busi-server.iml" filepath="$PROJECT_DIR$/platform-busi-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/platformbusi/platformbusi.iml" filepath="$PROJECT_DIR$/platformbusi/platformbusi.iml" />
       <module fileurl="file://$PROJECT_DIR$/role-batics-server/role-batics-server.iml" filepath="$PROJECT_DIR$/role-batics-server/role-batics-server.iml" />
