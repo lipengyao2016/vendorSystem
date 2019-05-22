@@ -6,17 +6,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrix
 @MapperScan("com.vendor.mapper")
-@ComponentScan(basePackages = {"com.vendor.controller","com.vendor.service"})
-
-public class RoleBaticsServerApplication {
+@ComponentScan(basePackages = {"com.vendor.controller","com.vendor.service","com.vendor.config"})
+class RoleBaticsServerApplication {
 
 	public static void main(String[] args) {
 
+        System.setProperty("spring.devtools.restart.enabled", "false");
 		SpringApplication.run(RoleBaticsServerApplication.class, args);
 	}
 

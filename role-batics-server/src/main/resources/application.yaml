@@ -3,3 +3,11 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+app:
+  id: role-batics-service
+apollo:
+  meta: http://192.168.7.210:8080/
+  cluster: dev
+  bootstrap:
+    enabled: true
+    namespaces: application,TEST1.Common

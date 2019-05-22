@@ -1,5 +1,6 @@
 package com.vendor.controller;
 
+import com.vendor.config.ApolloBootConfig;
 import com.vendor.entity.ListResponse;
 import com.vendor.bean.role.Roles;
 import com.vendor.queryvo.RoleQueryVo;
@@ -11,7 +12,6 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -26,6 +26,10 @@ public class RoleController {
     IRoleService rolexxService;
 
 
+    @Autowired
+    ApolloBootConfig apolloBootConfig;
+
+
 
     @RequestMapping(value = "/api/{ver}/roles", method = {RequestMethod.POST})
     @ResponseBody
@@ -35,6 +39,8 @@ public class RoleController {
         log.info("role:" + role.getUuid() + " name:" + role.getName() + ",version:" + version);
 
         System.out.println(role.getName());
+
+        log.info(" apollo config platform code:" + apolloBootConfig.getPlatFormCode());
       //  Roles newRole = (Roles) this.getRoleService().create(role);
 
        Roles newRole = (Roles) rolexxService.create(role);
