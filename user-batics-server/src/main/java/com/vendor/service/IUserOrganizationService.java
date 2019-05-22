@@ -1,7 +1,7 @@
 package com.vendor.service;
 
 
-import com.vendor.model.UserOrganizations;
+import com.vendor.bean.user.UserOrganizations;
 
 public interface IUserOrganizationService extends IBaseService<UserOrganizations,UserOrganizations> {
 

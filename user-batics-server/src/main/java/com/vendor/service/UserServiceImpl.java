@@ -3,13 +3,12 @@ package com.vendor.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.vendor.bean.user.*;
 import com.vendor.config.DataSourceProperties;
 import com.vendor.entity.ListResponse;
 import com.vendor.mapper.UsersMapper;
-import com.vendor.model.*;
-import com.vendor.queryvo.UserCreateVo;
-import com.vendor.queryvo.UserQueryVo;
-import com.vendor.model.UserRoleOrgQueryVo;
+import com.vendor.queryvo.user.UserCreateVo;
+import com.vendor.queryvo.user.UserQueryVo;
 import com.vendor.utils.BeanHelper;
 import com.vendor.utils.DBEntityUtils;
 import com.vendor.utils.DataNotFoundException;

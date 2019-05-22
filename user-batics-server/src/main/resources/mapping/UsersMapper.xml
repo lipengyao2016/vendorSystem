@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.vendor.mapper.UsersMapper" >
-  <resultMap id="BaseResultMap" type="com.vendor.model.Users" >
+  <resultMap id="BaseResultMap" type="com.vendor.bean.user.Users" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="uuid" property="uuid" jdbcType="CHAR" />
     <result column="name" property="name" jdbcType="CHAR" />
@@ -22,7 +22,7 @@
   </resultMap>
 
 
-  <resultMap id="userRoleOrgs" type="com.vendor.model.UserRoleOrgs" >
+  <resultMap id="userRoleOrgs" type="com.vendor.bean.user.UserRoleOrgs" >
     <result column="name" property="name"/>
     <result column="ownerUUID" property="ownerUUID"/>
     <result column="mobile" property="mobile"/>
@@ -30,7 +30,7 @@
     <result column="userUuid" property="userUuid"/>
   </resultMap>
 
-      <select id="getUserRole" resultMap="userRoleOrgs" parameterType="com.vendor.model.UserRoleOrgQueryVo">
+      <select id="getUserRole" resultMap="userRoleOrgs" parameterType="com.vendor.bean.user.UserRoleOrgQueryVo">
    SELECT u.name as name,ug.ownerUUID as ownerUUID,u.mobile as mobile,ur.roleUuid as roleUUID,u.uuid as userUuid
      FROM vd_users u,userrolememberships ur ,userorganizations ug WHERE
     u.userOrganizationUUID = ug.uuid and ur.userUuid = u.uuid
@@ -108,7 +108,7 @@
     id, uuid, name, email, sex, mobile, address, age, description, status, type, headImgHref, 
     accountUUID, userOrganizationUUID, departmentUUID, createdAt, modifiedAt
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.vendor.model.UsersCriteria" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.vendor.bean.user.UsersCriteria" >
     select
     <if test="distinct" >
       distinct
@@ -122,13 +122,13 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.vendor.model.UsersCriteria" >
+  <delete id="deleteByExample" parameterType="com.vendor.bean.user.UsersCriteria" >
     delete from vd_users
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.vendor.model.Users" >
+  <insert id="insert" parameterType="com.vendor.bean.user.Users" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -145,7 +145,7 @@
       #{departmentuuid,jdbcType=CHAR}, #{createdat,jdbcType=TIMESTAMP}, #{modifiedat,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.vendor.model.Users" >
+  <insert id="insertSelective" parameterType="com.vendor.bean.user.Users" >
     <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -251,7 +251,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.vendor.model.UsersCriteria" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.vendor.bean.user.UsersCriteria" resultType="java.lang.Integer" >
     select count(*) from vd_users
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

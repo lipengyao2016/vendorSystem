@@ -1,7 +1,7 @@
 package com.vendor.service;
 
 
-import com.vendor.model.UserRoleMemberships;
+import com.vendor.bean.user.UserRoleMemberships;
 
 import java.util.List;
 

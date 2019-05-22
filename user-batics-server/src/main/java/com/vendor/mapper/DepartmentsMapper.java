@@ -1,7 +1,7 @@
 package com.vendor.mapper;
 
-import com.vendor.model.Departments;
-import com.vendor.model.DepartmentsCriteria;
+import com.vendor.bean.user.Departments;
+import com.vendor.bean.user.DepartmentsCriteria;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

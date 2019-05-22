@@ -1,4 +1,4 @@
-package com.vendor.queryvo;
+package com.vendor.queryvo.user;
 // Generated 2019-5-8 16:49:54 by Hibernate Tools 5.2.8.Final
 
 

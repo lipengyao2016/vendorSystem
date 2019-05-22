@@ -1,58 +1,27 @@
-package com.vendor.queryvo;
+package com.vendor.queryvo.user;
 
-public class UserQueryVo {
-    private String id;
+
+
+import com.vendor.bean.user.UserRoleMemberships;
+
+import java.util.List;
+
+public class UserCreateVo {
     private String uuid;
     private String name;
     private String email;
     private String sex;
     private String mobile;
     private String address;
-
-    public Integer getPage() {
-        return page;
-    }
-
-    public void setPage(Integer page) {
-        this.page = page;
-    }
-
-    private Integer page;
-
-    public Integer getRows() {
-        return rows;
-    }
-
-    public void setRows(Integer rows) {
-        this.rows = rows;
-    }
-
-    private Integer rows;
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    private String age;
+    private Integer age;
     private String description;
     private String status;
     private String type;
     private String headImgHref;
     private String accountUuid;
-    private String userOrganizationUuid;
+    private String ownerUUID;
     private String departmentUuid;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getUuid() {
         return uuid;
@@ -102,7 +71,13 @@ public class UserQueryVo {
         this.address = address;
     }
 
+    public Integer getAge() {
+        return age;
+    }
 
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
     public String getDescription() {
         return description;
@@ -144,12 +119,12 @@ public class UserQueryVo {
         this.accountUuid = accountUuid;
     }
 
-    public String getUserOrganizationUuid() {
-        return userOrganizationUuid;
+    public String getOwnerUUID() {
+        return ownerUUID;
     }
 
-    public void setUserOrganizationUuid(String userOrganizationUuid) {
-        this.userOrganizationUuid = userOrganizationUuid;
+    public void setOwnerUUID(String ownerUUID) {
+        this.ownerUUID = ownerUUID;
     }
 
     public String getDepartmentUuid() {
@@ -160,22 +135,24 @@ public class UserQueryVo {
         this.departmentUuid = departmentUuid;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+/*    public String getRoleUUID() {
+        return roleUUID;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setRoleUUID(String roleUUID) {
+        this.roleUUID = roleUUID;
     }
 
-    public String getModifiedAt() {
-        return modifiedAt;
+    private String roleUUID;*/
+
+    public List<UserRoleMemberships> getUserRoleMemberShips() {
+        return userRoleMemberShips;
     }
 
-    public void setModifiedAt(String modifiedAt) {
-        this.modifiedAt = modifiedAt;
+    public void setUserRoleMemberShips(List<UserRoleMemberships> userRoleMemberShips) {
+        this.userRoleMemberShips = userRoleMemberShips;
     }
 
-    private String createdAt;
-    private String modifiedAt;
+
+    private List<UserRoleMemberships> userRoleMemberShips ;
 }

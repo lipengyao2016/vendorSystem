@@ -1,7 +1,7 @@
 package com.vendor.mapper;
 
-import com.vendor.model.UserRoleMemberships;
-import com.vendor.model.UserRoleMembershipsCriteria;
+import com.vendor.bean.user.UserRoleMemberships;
+import com.vendor.bean.user.UserRoleMembershipsCriteria;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

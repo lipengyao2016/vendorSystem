@@ -1,8 +1,8 @@
 package com.vendor.controller;
 
 import com.vendor.entity.ListResponse;
-import com.vendor.model.Departments;
-import com.vendor.queryvo.DepartmentQueryVo;
+import com.vendor.bean.user.Departments;
+import com.vendor.queryvo.user.DepartmentQueryVo;
 import com.vendor.service.IDepartmentService;
 import com.vendor.utils.DataNotFoundException;
 import com.vendor.utils.GsonUtils;

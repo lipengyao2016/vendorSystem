@@ -1,9 +1,9 @@
 package com.vendor.mapper;
 
-import com.vendor.model.UserRoleOrgQueryVo;
-import com.vendor.model.UserRoleOrgs;
-import com.vendor.model.Users;
-import com.vendor.model.UsersCriteria;
+import com.vendor.bean.user.UserRoleOrgQueryVo;
+import com.vendor.bean.user.UserRoleOrgs;
+import com.vendor.bean.user.Users;
+import com.vendor.bean.user.UsersCriteria;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

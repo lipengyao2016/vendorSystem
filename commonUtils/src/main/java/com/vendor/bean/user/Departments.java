@@ -1,8 +1,8 @@
-package com.vendor.model;
+package com.vendor.bean.user;
 
 import java.util.Date;
 
-public class UserOrganizations {
+public class Departments {
     private Integer id;
 
     private String uuid;
@@ -11,11 +11,11 @@ public class UserOrganizations {
 
     private String description;
 
+    private String upleveldepartmentuuid;
+
+    private String userorganizationuuid;
+
     private String status;
-
-    private String owneruuid;
-
-    private String ownertype;
 
     private Date createdat;
 
@@ -53,28 +53,28 @@ public class UserOrganizations {
         this.description = description == null ? null : description.trim();
     }
 
+    public String getUpleveldepartmentuuid() {
+        return upleveldepartmentuuid;
+    }
+
+    public void setUpleveldepartmentuuid(String upleveldepartmentuuid) {
+        this.upleveldepartmentuuid = upleveldepartmentuuid == null ? null : upleveldepartmentuuid.trim();
+    }
+
+    public String getUserorganizationuuid() {
+        return userorganizationuuid;
+    }
+
+    public void setUserorganizationuuid(String userorganizationuuid) {
+        this.userorganizationuuid = userorganizationuuid == null ? null : userorganizationuuid.trim();
+    }
+
     public String getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
-    }
-
-    public String getOwneruuid() {
-        return owneruuid;
-    }
-
-    public void setOwneruuid(String owneruuid) {
-        this.owneruuid = owneruuid == null ? null : owneruuid.trim();
-    }
-
-    public String getOwnertype() {
-        return ownertype;
-    }
-
-    public void setOwnertype(String ownertype) {
-        this.ownertype = ownertype == null ? null : ownertype.trim();
     }
 
     public Date getCreatedat() {

@@ -1,7 +1,7 @@
 package com.vendor.mapper;
 
-import com.vendor.model.UserOrganizations;
-import com.vendor.model.UserOrganizationsCriteria;
+import com.vendor.bean.user.UserOrganizations;
+import com.vendor.bean.user.UserOrganizationsCriteria;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -2,11 +2,11 @@ package com.vendor.service;
 
 
 import com.vendor.entity.ListResponse;
-import com.vendor.model.UserRoleOrgs;
-import com.vendor.model.Users;
-import com.vendor.queryvo.UserCreateVo;
-import com.vendor.queryvo.UserQueryVo;
-import com.vendor.model.UserRoleOrgQueryVo;
+import com.vendor.bean.user.UserRoleOrgs;
+import com.vendor.bean.user.Users;
+import com.vendor.queryvo.user.UserCreateVo;
+import com.vendor.queryvo.user.UserQueryVo;
+import com.vendor.bean.user.UserRoleOrgQueryVo;
 
 
 public interface IUserService extends IBaseService<Users,UserQueryVo> {

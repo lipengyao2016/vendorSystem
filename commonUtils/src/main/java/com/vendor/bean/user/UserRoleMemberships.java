@@ -1,4 +1,4 @@
-package com.vendor.model;
+package com.vendor.bean.user;
 
 import java.util.Date;
 

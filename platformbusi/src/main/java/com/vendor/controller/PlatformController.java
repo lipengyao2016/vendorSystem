@@ -2,13 +2,20 @@ package com.vendor.controller;
 
 
 import com.vendor.bean.role.Roles;
+import com.vendor.bean.user.UserRoleMemberships;
+import com.vendor.bean.user.Users;
 import com.vendor.client.RoleFeignClient;
+import com.vendor.client.UserFeignClient;
+import com.vendor.queryvo.user.UserRoleCreateVo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 //@RequestMapping("/order")
@@ -21,21 +28,33 @@ public class PlatformController {
     private RoleFeignClient roleFeignClient;
 
     @Autowired
+    private UserFeignClient userFeignClient;
+
+    @Autowired
     private RestTemplate restTemplate;
 
     @RequestMapping(value = "/api/{ver}/roles", method = {RequestMethod.POST})
     @ResponseBody
     @ResponseStatus(code= HttpStatus.CREATED)
-    public Roles createRole(@PathVariable("ver") String version, @RequestBody Roles role) {
+    public Users createRole(@PathVariable("ver") String version, @RequestBody UserRoleCreateVo userRoleCreateVo) {
 
-        log.info("role:" + role.getUuid() + " name:" + role.getName() + ",version:" + version);
+        log.info("userRoleCreateVo:" + userRoleCreateVo.getRole().getName()  + ",version:" + version);
 
-        System.out.println(role.getName());
+
         //  Roles newRole = (Roles) this.getRoleService().create(role);
 
         //return  null;
 
-        return  roleFeignClient.createRole(version,role);
+        Roles role =   roleFeignClient.createRole(version,userRoleCreateVo.getRole());
+        List<UserRoleMemberships> userRoleMembershipsList = new ArrayList<>();
+        UserRoleMemberships userRoleMemberships = new UserRoleMemberships();
+        userRoleMemberships.setRoleuuid(role.getUuid());
+        userRoleMembershipsList.add(userRoleMemberships);
+
+
+        userRoleCreateVo.getUser().setUserRoleMemberShips(userRoleMembershipsList);
+        Users user =  userFeignClient.createUser(version,userRoleCreateVo.getUser());
+        return  user;
     }
 
 

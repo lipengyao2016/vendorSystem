@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.vendor.mapper.DepartmentsMapper">
-  <resultMap id="BaseResultMap" type="com.vendor.model.Departments">
+  <resultMap id="BaseResultMap" type="com.vendor.bean.user.Departments">
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="uuid" jdbcType="CHAR" property="uuid" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -74,7 +74,7 @@
     id, uuid, name, description, upLevelDepartmentUUID, userOrganizationUUID, status, 
     createdAt, modifiedAt
   </sql>
-  <select id="selectByExample" parameterType="com.vendor.model.DepartmentsCriteria" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.vendor.bean.user.DepartmentsCriteria" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -88,13 +88,13 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.vendor.model.DepartmentsCriteria">
+  <delete id="deleteByExample" parameterType="com.vendor.bean.user.DepartmentsCriteria">
     delete from departments
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.vendor.model.Departments">
+  <insert id="insert" parameterType="com.vendor.bean.user.Departments">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -107,7 +107,7 @@
       #{status,jdbcType=CHAR}, #{createdat,jdbcType=TIMESTAMP}, #{modifiedat,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.vendor.model.Departments">
+  <insert id="insertSelective" parameterType="com.vendor.bean.user.Departments">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -165,7 +165,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.vendor.model.DepartmentsCriteria" resultType="java.lang.Integer">
+  <select id="countByExample" parameterType="com.vendor.bean.user.DepartmentsCriteria" resultType="java.lang.Integer">
     select count(*) from departments
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

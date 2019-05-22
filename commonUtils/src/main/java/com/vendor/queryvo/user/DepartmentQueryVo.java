@@ -1,9 +1,10 @@
-package com.vendor.model;
+package com.vendor.queryvo.user;
 
-import java.util.Date;
 
-public class Departments {
-    private Integer id;
+
+public class DepartmentQueryVo {
+
+    private String id;
 
     private String uuid;
 
@@ -11,21 +12,11 @@ public class Departments {
 
     private String description;
 
-    private String upleveldepartmentuuid;
-
-    private String userorganizationuuid;
-
-    private String status;
-
-    private Date createdat;
-
-    private Date modifiedat;
-
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -34,7 +25,7 @@ public class Departments {
     }
 
     public void setUuid(String uuid) {
-        this.uuid = uuid == null ? null : uuid.trim();
+        this.uuid = uuid;
     }
 
     public String getName() {
@@ -42,7 +33,7 @@ public class Departments {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
     public String getDescription() {
@@ -50,7 +41,7 @@ public class Departments {
     }
 
     public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
+        this.description = description;
     }
 
     public String getUpleveldepartmentuuid() {
@@ -58,7 +49,7 @@ public class Departments {
     }
 
     public void setUpleveldepartmentuuid(String upleveldepartmentuuid) {
-        this.upleveldepartmentuuid = upleveldepartmentuuid == null ? null : upleveldepartmentuuid.trim();
+        this.upleveldepartmentuuid = upleveldepartmentuuid;
     }
 
     public String getUserorganizationuuid() {
@@ -66,7 +57,7 @@ public class Departments {
     }
 
     public void setUserorganizationuuid(String userorganizationuuid) {
-        this.userorganizationuuid = userorganizationuuid == null ? null : userorganizationuuid.trim();
+        this.userorganizationuuid = userorganizationuuid;
     }
 
     public String getStatus() {
@@ -74,22 +65,33 @@ public class Departments {
     }
 
     public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+        this.status = status;
     }
 
-    public Date getCreatedat() {
+    public String getCreatedat() {
         return createdat;
     }
 
-    public void setCreatedat(Date createdat) {
+    public void setCreatedat(String createdat) {
         this.createdat = createdat;
     }
 
-    public Date getModifiedat() {
+    public String getModifiedat() {
         return modifiedat;
     }
 
-    public void setModifiedat(Date modifiedat) {
+    public void setModifiedat(String modifiedat) {
         this.modifiedat = modifiedat;
     }
+
+    private String upleveldepartmentuuid;
+
+    private String userorganizationuuid;
+
+    private String status;
+
+    private String createdat;
+
+    private String modifiedat;
+
 }
