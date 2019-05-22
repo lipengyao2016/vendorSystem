@@ -1,12 +1,15 @@
 package com.vendor.service;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.vendor.config.DataSourceProperties;
 import com.vendor.entity.ListResponse;
 import com.vendor.mapper.UsersMapper;
 import com.vendor.model.*;
 import com.vendor.queryvo.UserCreateVo;
 import com.vendor.queryvo.UserQueryVo;
+import com.vendor.model.UserRoleOrgQueryVo;
 import com.vendor.utils.BeanHelper;
 import com.vendor.utils.DBEntityUtils;
 import com.vendor.utils.DataNotFoundException;
@@ -20,7 +23,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 @Service
 public class UserServiceImpl implements  IUserService{
@@ -81,8 +83,20 @@ public class UserServiceImpl implements  IUserService{
         return this.baseService.update(uuid,updateObj);
     }
 
+    @Transactional
     @Override
     public Users delete(String uuid) {
+
+        List<UserRoleMemberships> userRoleMembershipsList = userRoleMembershipService.getUserRoles(uuid);
+
+        List<String> userRoleUUIDs = new ArrayList<>();
+        for(UserRoleMemberships tempUserRole :userRoleMembershipsList )
+        {
+            userRoleUUIDs.add(tempUserRole.getUuid());
+        }
+
+        userRoleMembershipService.batchDelete(userRoleUUIDs);
+
         return this.baseService.delete(uuid);
     }
 
@@ -146,12 +160,11 @@ public class UserServiceImpl implements  IUserService{
         try {
             Users updateUser = new Users();
 
-            UserRoleMemberships queryUserRole = new UserRoleMemberships();
-            queryUserRole.setUseruuid(userCreateVo.getUuid());
-            ListResponse<UserRoleMemberships> userRoleMembershipsList = userRoleMembershipService.list(queryUserRole,1,10);
+
+            List<UserRoleMemberships> userRoleMembershipsList = userRoleMembershipService.getUserRoles(userCreateVo.getUuid());
 
             List<String> userRoleUUIDs = new ArrayList<>();
-            for(UserRoleMemberships tempUserRole :userRoleMembershipsList.getItems() )
+            for(UserRoleMemberships tempUserRole :userRoleMembershipsList )
             {
                 userRoleUUIDs.add(tempUserRole.getUuid());
             }
@@ -185,4 +198,36 @@ public class UserServiceImpl implements  IUserService{
         return user;
 
     }
+
+    @Override
+    public ListResponse<UserRoleOrgs> getUserRole(UserRoleOrgQueryVo userRoleOrgQueryVo, Integer page, Integer rows) {
+
+        if(page == null)
+        {
+            page = 1;
+        }
+        if(rows == null)
+        {
+            rows = 10000;
+        }
+
+        PageHelper.startPage(page -1, rows);
+
+        userRoleOrgQueryVo.setName("%" + userRoleOrgQueryVo.getName() + "%");
+
+        List<UserRoleOrgs>  userRoleOrgs = this.UserDao.getUserRole(userRoleOrgQueryVo);
+
+        PageInfo pageInfo=new PageInfo<>(userRoleOrgs);
+        ListResponse<UserRoleOrgs> response = new ListResponse<>();
+        response.setItems(pageInfo.getList());
+        response.setTotalSize( ((Long) pageInfo.getTotal()).intValue() );
+        response.setTotalPageCount(pageInfo.getPages());
+        response.setPageSize(rows);
+        response.setCurrentPage(page);
+
+        return  response;
+
+    }
+
+
 }

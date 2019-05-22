@@ -20,6 +20,32 @@
     <result column="createdAt" property="createdat" jdbcType="TIMESTAMP" />
     <result column="modifiedAt" property="modifiedat" jdbcType="TIMESTAMP" />
   </resultMap>
+
+
+  <resultMap id="userRoleOrgs" type="com.vendor.model.UserRoleOrgs" >
+    <result column="name" property="name"/>
+    <result column="ownerUUID" property="ownerUUID"/>
+    <result column="mobile" property="mobile"/>
+    <result column="roleUUID" property="roleUuid"/>
+    <result column="userUuid" property="userUuid"/>
+  </resultMap>
+
+      <select id="getUserRole" resultMap="userRoleOrgs" parameterType="com.vendor.model.UserRoleOrgQueryVo">
+   SELECT u.name as name,ug.ownerUUID as ownerUUID,u.mobile as mobile,ur.roleUuid as roleUUID,u.uuid as userUuid
+     FROM vd_users u,userrolememberships ur ,userorganizations ug WHERE
+    u.userOrganizationUUID = ug.uuid and ur.userUuid = u.uuid
+
+        <if test="ownerUUID != null" >
+          and ug.ownerUUID =#{ownerUUID}
+        </if>
+
+        <if test="name != null" >
+          and u.name LIKE  #{name}
+        </if>
+
+      </select>
+
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

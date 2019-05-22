@@ -90,5 +90,13 @@ public class UserRoleMembershipServiceImpl implements  IUserRoleMembershipServic
         return this.baseService.batchUpdate(uuids,updateObj);
     }
 
+    @Override
+    public List<UserRoleMemberships> getUserRoles(String userUUID) {
+        UserRoleMemberships queryUserRole = new UserRoleMemberships();
+        queryUserRole.setUseruuid(userUUID);
+        ListResponse<UserRoleMemberships> userRoleMembershipsList = this.list(queryUserRole,1,10);
+        return  userRoleMembershipsList.getItems();
+    }
+
 
 }

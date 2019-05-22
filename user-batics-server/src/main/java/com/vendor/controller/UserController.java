@@ -1,9 +1,11 @@
 package com.vendor.controller;
 
 import com.vendor.entity.ListResponse;
+import com.vendor.model.UserRoleOrgs;
 import com.vendor.model.Users;
 import com.vendor.queryvo.UserCreateVo;
 import com.vendor.queryvo.UserQueryVo;
+import com.vendor.model.UserRoleOrgQueryVo;
 import com.vendor.service.IUserService;
 import com.vendor.utils.DataNotFoundException;
 import com.vendor.utils.GsonUtils;
@@ -77,6 +79,14 @@ public class UserController {
         log.info("UserUUID22  :" + UserUUID);
 
         return UserService.delete(UserUUID);
+    }
+
+    @RequestMapping(value = "/api/{ver}/userRoleOrgs", method = {RequestMethod.GET})
+    @ResponseBody
+    public ListResponse<UserRoleOrgs> findUserListByOrgaUUID(@PathVariable("ver") String version, UserRoleOrgQueryVo userRoleOrgQueryVo
+            , Integer page, Integer rows) {
+        log.info(",version:" + version);
+        return UserService.getUserRole(userRoleOrgQueryVo,page,rows);
     }
 
 
