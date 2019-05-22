@@ -1,7 +1,7 @@
 package com.vendor.mapper;
 
-import com.vendor.model.Roles;
-import com.vendor.model.RolesExample;
+import com.vendor.bean.role.Roles;
+import com.vendor.bean.role.RolesExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

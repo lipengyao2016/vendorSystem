@@ -1,7 +1,7 @@
 package com.vendor.rolebaticsserver;
 
 import com.vendor.mapper.RolesMapper;
-import com.vendor.model.Roles;
+import com.vendor.bean.role.Roles;
 import com.vendor.utils.DBEntityUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;

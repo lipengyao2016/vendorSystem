@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="commonUtils" />
+        <module name="platform-busi-server" />
+        <module name="platformbusi" />
         <module name="role-batics-server" />
         <module name="sqb-store-map" />
         <module name="user-batics-server" />
@@ -15,6 +17,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="commonUtils" target="1.8" />
+      <module name="platform-busi-server" target="1.8" />
+      <module name="platformbusi" target="1.8" />
       <module name="role-batics-server" target="1.8" />
       <module name="role-batics-server (1)" target="1.8" />
       <module name="role-mybatics-server" target="1.8" />

@@ -1,4 +1,4 @@
-package com.vendor.model;
+package com.vendor.bean.role;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;

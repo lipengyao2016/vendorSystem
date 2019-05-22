@@ -1,4 +1,4 @@
-package com.vendor.model;
+package com.vendor.bean.role;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -6,20 +6,16 @@ import com.github.pagehelper.PageInfo;
 import com.vendor.entity.ListResponse;
 
 import com.vendor.mapper.RolesMapper;
-import com.vendor.model.Roles;
-import com.vendor.model.RolesExample;
+import com.vendor.bean.role.Roles;
+import com.vendor.bean.role.RolesExample;
 import com.vendor.queryvo.RoleQueryVo;
 import com.vendor.utils.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.Path;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
-import java.sql.Ref;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

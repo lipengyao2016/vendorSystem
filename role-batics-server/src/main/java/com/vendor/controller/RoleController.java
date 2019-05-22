@@ -1,12 +1,9 @@
 package com.vendor.controller;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.vendor.entity.ListResponse;
-import com.vendor.model.Roles;
+import com.vendor.bean.role.Roles;
 import com.vendor.queryvo.RoleQueryVo;
 import com.vendor.service.IRoleService;
-import com.vendor.service.RoleServiceImpl;
 import com.vendor.utils.DataNotFoundException;
 import com.vendor.utils.GsonUtils;
 import org.apache.commons.logging.Log;

@@ -2,13 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a9b33c9-eb23-4913-bf46-d38f844afb8f" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/client/RoleFeignClient.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/controller/PlatformController.java" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_3.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/pom.xml" afterPath="$PROJECT_DIR$/role-batics-server/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/RoleBaticsServerApplication.java" afterPath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/RoleBaticsServerApplication.java" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java" afterPath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/mapper/RolesMapper.java" afterPath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/mapper/RolesMapper.java" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/model/Roles.java" afterPath="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/bean/role/Roles.java" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/model/RolesExample.java" afterPath="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/bean/role/RolesExample.java" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/IRoleService.java" afterPath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/IRoleService.java" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleBaticsServiceImpl.java" afterPath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleBaticsServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java" afterPath="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/role-batics-server/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/main/resources/mapping/RolesMapper.xml" afterPath="$PROJECT_DIR$/role-batics-server/src/main/resources/mapping/RolesMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/role-batics-server/src/test/java/com/vendor/rolebaticsserver/RoleBaticsServerApplicationTests.java" afterPath="$PROJECT_DIR$/role-batics-server/src/test/java/com/vendor/rolebaticsserver/RoleBaticsServerApplicationTests.java" />
+      <change beforePath="$PROJECT_DIR$/user-batics-server-20190520.rar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/user-batics-server/pom.xml" afterPath="$PROJECT_DIR$/user-batics-server/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/UserBaticsServerApplication.java" afterPath="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/UserBaticsServerApplication.java" />
+      <change beforePath="$PROJECT_DIR$/user-batics-server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/user-batics-server/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/../role-server/target/" />
     <ignored path="$PROJECT_DIR$/../commonUtils/target/" />
@@ -20,6 +37,7 @@
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/role-batics-server/target/" />
     <ignored path="$PROJECT_DIR$/user-batics-server/target/" />
+    <ignored path="$PROJECT_DIR$/platformbusi/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,130 +47,112 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/UserServiceImpl.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platformbusi/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="224" column="35" lean-forward="true" selection-start-line="224" selection-start-column="35" selection-end-line="224" selection-end-column="35" />
+            <state relative-caret-position="972">
+              <caret line="90" column="12" lean-forward="true" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platformbusi/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleBaticsServerApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/RoleBaticsServerApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RolesMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/resources/mapping/RolesMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="63" lean-forward="false" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
               <folding>
-                <element signature="e#1445#1446#0" expanded="true" />
-                <element signature="e#1503#1504#0" expanded="true" />
-                <element signature="e#1963#1964#0" expanded="true" />
-                <element signature="e#2015#2016#0" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
-                <element signature="e#2116#2117#0" expanded="true" />
-                <element signature="e#2355#2356#0" expanded="true" />
-                <element signature="e#2417#2418#0" expanded="true" />
-                <element signature="e#3125#3126#0" expanded="true" />
-                <element signature="e#3184#3185#0" expanded="true" />
-                <element signature="e#3248#3249#0" expanded="true" />
-                <element signature="e#3306#3307#0" expanded="true" />
+                <marker date="1558515173533" expanded="true" signature="4656:4673" ph="delete from roles... " />
+                <marker date="1558515173533" expanded="true" signature="8316:8342" ph="select count... roles" />
+                <marker date="1558515173533" expanded="true" signature="9929:10524" ph="update roles... " />
+                <marker date="1558515173533" expanded="true" signature="10697:11230" ph="update roles... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Readme" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/Readme">
+      <file leaf-file-name="PlatformController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/controller/PlatformController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/resources/mapping/UsersMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            <state relative-caret-position="292">
+              <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
               <folding>
-                <element signature="n#sql#1;n#mapper#0;n#!!top" expanded="false" />
-                <element signature="n#sql#2;n#mapper#0;n#!!top" expanded="false" />
-                <element signature="n#delete#0;n#mapper#0;n#!!top" expanded="false" />
-                <marker date="1558509391004" expanded="true" signature="1916:2339" ph="SELECT u.nam... vd_users" />
-                <marker date="1558509391004" expanded="true" signature="9330:9359" ph="select count... vd_users" />
-                <marker date="1558509391004" expanded="true" signature="11584:12480" ph="update vd_users... " />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/controller/UserController.java">
+      <file leaf-file-name="PlatformbusiApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/PlatformbusiApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="294">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <folding>
+                <element signature="e#988#989#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/mapper/UsersMapper.java">
+      <file leaf-file-name="RoleFeignClient.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/client/RoleFeignClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="392">
+              <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserCreateVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/UserCreateVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="147" column="61" lean-forward="false" selection-start-line="147" selection-start-column="61" selection-end-line="147" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserQueryVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/UserQueryVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRoleQueryVO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/UserRoleQueryVO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-243">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRoleOrgQueryVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/model/UserRoleOrgQueryVo.java">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#140#141#0" expanded="true" />
-                <element signature="e#172#173#0" expanded="true" />
-                <element signature="e#222#223#0" expanded="true" />
-                <element signature="e#264#265#0" expanded="true" />
-                <element signature="e#295#296#0" expanded="true" />
-                <element signature="e#322#323#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#394#395#0" expanded="true" />
-              </folding>
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IUserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/IUserService.java">
+      <file leaf-file-name="RolesExample.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/bean/role/RolesExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="18" column="88" lean-forward="false" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="88" />
+            <state relative-caret-position="225">
+              <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -172,7 +172,6 @@
     <findStrings>
       <find>/Users</find>
       <find>xx</find>
-      <find>User</find>
       <find>UserOrganization</find>
       <find>roleUUID</find>
       <find>oldRole</find>
@@ -192,6 +191,7 @@
       <find>RoleMemship</find>
       <find>9011</find>
       <find>BaseResultMap</find>
+      <find>User</find>
     </findStrings>
     <replaceStrings>
       <replace>/users</replace>
@@ -206,6 +206,7 @@
       <replace>UserOrganization</replace>
       <replace>RoleMembership</replace>
       <replace>9013</replace>
+      <replace>Platform</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -224,20 +225,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/graph/GraphDot.java" />
-        <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/graph/GraphData.java" />
-        <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/graph/GraphColorTest.java" />
-        <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/BaseMyBaticsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/commonUtils/pom.xml" />
-        <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/mapper/RolesMapper.java" />
-        <option value="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/IBaseService.java" />
-        <option value="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/service/BaseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleBaticsServiceImpl.java" />
         <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java" />
         <option value="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/GsonUtils.java" />
         <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java" />
         <option value="$PROJECT_DIR$/role-batics-server/Readme" />
-        <option value="$PROJECT_DIR$/role-batics-server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/IRoleService.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/DepartQueryVo.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/RoleBaticsServiceImpl.java" />
@@ -247,13 +238,10 @@
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/config/DataSourceProperties.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/config/DruidDataSourceConfig.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/config/SqlSessionFactoryConfig.java" />
-        <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/UserBaticsServerApplication.java" />
-        <option value="$PROJECT_DIR$/user-batics-server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/model/DepartmentsExample.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/DepartmentServiceImpl.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/IDepartmentService.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/controller/DepartmentController.java" />
-        <option value="$PROJECT_DIR$/user-batics-server/pom.xml" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/queryvo/UserRoleQueryVO.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/DepartmentQueryVo.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/UserRoleQueryVO.java" />
@@ -275,6 +263,19 @@
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/mapper/UsersMapper.java" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/resources/mapping/UsersMapper.xml" />
         <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/user-batics-server/pom.xml" />
+        <option value="$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/RoleBaticsServerApplication.java" />
+        <option value="$PROJECT_DIR$/role-batics-server/pom.xml" />
+        <option value="$PROJECT_DIR$/role-batics-server/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/user-batics-server/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/UserBaticsServerApplication.java" />
+        <option value="$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/platformbusi/PlatformbusiApplication.java" />
+        <option value="$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/bean/role/RolesExample.java" />
+        <option value="$PROJECT_DIR$/platformbusi/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/platformbusi/pom.xml" />
+        <option value="$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/controller/PlatformController.java" />
+        <option value="$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/PlatformbusiApplication.java" />
+        <option value="$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/client/RoleFeignClient.java" />
       </list>
     </option>
   </component>
@@ -339,8 +340,11 @@
     <option name="width" value="1400" />
     <option name="height" value="970" />
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <flattenPackages ProjectPane="false" />
       <showMembers />
       <showModules />
@@ -354,30 +358,52 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
               <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="commonUtils" type="616d4139:PackageViewModuleNode" />
+              <item name="platformbusi" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
               <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="commonUtils" type="616d4139:PackageViewModuleNode" />
+              <item name="platformbusi" type="616d4139:PackageViewModuleNode" />
               <item name="com.vendor" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="commonUtils" type="616d4139:PackageViewModuleNode" />
+              <item name="platformbusi" type="616d4139:PackageViewModuleNode" />
               <item name="com.vendor" type="1f31426a:PackageElementNode" />
-              <item name="service" type="1f31426a:PackageElementNode" />
+              <item name="client" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
-              <item name="commonUtils" type="616d4139:PackageViewModuleNode" />
+              <item name="platformbusi" type="616d4139:PackageViewModuleNode" />
               <item name="com.vendor" type="1f31426a:PackageElementNode" />
-              <item name="service" type="1f31426a:PackageElementNode" />
-              <item name="BaseMyBaticsServiceImpl" type="1a9f42e2:ClassTreeNode" />
+              <item name="client" type="1f31426a:PackageElementNode" />
+              <item name="RoleFeignClient" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
+              <item name="platformbusi" type="616d4139:PackageViewModuleNode" />
+              <item name="com.vendor" type="1f31426a:PackageElementNode" />
+              <item name="platformbusi" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
+              <item name="role-batics-server" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
+              <item name="role-batics-server" type="616d4139:PackageViewModuleNode" />
+              <item name="com.vendor" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
+              <item name="role-batics-server" type="616d4139:PackageViewModuleNode" />
+              <item name="com.vendor" type="1f31426a:PackageElementNode" />
+              <item name="RoleBaticsServerApplication" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="vendorSystem" type="58d84e3e:PackageViewProjectNode" />
@@ -421,117 +447,26 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="queryvo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-batics-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vendorSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="user-server" type="462c0819:PsiDirectoryNode" />
+              <item name="role-batics-server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/role-batics-server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -549,11 +484,11 @@
       <recent name="com.vendor" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.vendor.model" />
+      <recent name="com.vendor.client" />
       <recent name="com.vendor.controller" />
+      <recent name="com.vendor.model" />
       <recent name="com.vendor.service" />
       <recent name="com.vendor.queryvo" />
-      <recent name="com.vendor.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\WebServer\vendorSystem\user-batics-server" />
@@ -575,7 +510,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserBaticsServerApplication">
+  <component name="RunManager" selected="Application.PlatformbusiApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -601,14 +536,14 @@
       <module name="role-batics-server" />
       <envs />
     </configuration>
-    <configuration name="RoleServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="PlatformbusiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.vendor.graph.*" />
+          <option name="PATTERN" value="com.vendor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.vendor.RoleServerApplication" />
+      <option name="MAIN_CLASS_NAME" value="com.vendor.PlatformbusiApplication" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -617,7 +552,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="role-server" />
+      <module name="platformbusi" />
       <envs />
     </configuration>
     <configuration name="UserServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -826,19 +761,19 @@
       <item index="3" class="java.lang.String" itemvalue="Spring Boot.RoleBaticsServerApplication" />
       <item index="4" class="java.lang.String" itemvalue="Spring Boot.UserBatsServerApplication" />
       <item index="5" class="java.lang.String" itemvalue="Spring Boot.UserBaticsServerApplication" />
-      <item index="6" class="java.lang.String" itemvalue="Application.RoleServerApplication" />
-      <item index="7" class="java.lang.String" itemvalue="Application.UserServerApplication" />
-      <item index="8" class="java.lang.String" itemvalue="Maven.role-batics-server [mybatis-generator:generate]" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.RoleBaticsServerApplicationTests.testCreate" />
-      <item index="10" class="java.lang.String" itemvalue="Application.GraphColorTest" />
+      <item index="6" class="java.lang.String" itemvalue="Application.UserServerApplication" />
+      <item index="7" class="java.lang.String" itemvalue="Maven.role-batics-server [mybatis-generator:generate]" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.RoleBaticsServerApplicationTests.testCreate" />
+      <item index="9" class="java.lang.String" itemvalue="Application.GraphColorTest" />
+      <item index="10" class="java.lang.String" itemvalue="Application.PlatformbusiApplication" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.GraphColorTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RoleBaticsServerApplicationTests.testCreate" />
-        <item index="2" class="java.lang.String" itemvalue="Maven.role-batics-server [mybatis-generator:generate]" />
-        <item index="3" class="java.lang.String" itemvalue="Application.UserServerApplication" />
-        <item index="4" class="java.lang.String" itemvalue="Application.RoleServerApplication" />
+        <item index="0" class="java.lang.String" itemvalue="Application.PlatformbusiApplication" />
+        <item index="1" class="java.lang.String" itemvalue="Application.GraphColorTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RoleBaticsServerApplicationTests.testCreate" />
+        <item index="3" class="java.lang.String" itemvalue="Maven.role-batics-server [mybatis-generator:generate]" />
+        <item index="4" class="java.lang.String" itemvalue="Application.UserServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -876,7 +811,8 @@
       <workItem from="1558347494569" duration="5295000" />
       <workItem from="1558424079603" duration="5214000" />
       <workItem from="1558436855137" duration="2823000" />
-      <workItem from="1558495514965" duration="6153000" />
+      <workItem from="1558495514965" duration="6830000" />
+      <workItem from="1558512856256" duration="3280000" />
     </task>
     <servers />
   </component>
@@ -895,7 +831,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142618000" />
+    <option name="totallyTimeSpent" value="146575000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -919,7 +855,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37313432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37313432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32146958" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -927,11 +863,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="LuaCheck" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32988507" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3869116" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45402297" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25305623" sideWeight="0.4888889" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25611246" sideWeight="0.4888889" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22390318" sideWeight="0.51111114" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1122,43 +1058,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java</url>
-          <line>112</line>
+          <line>108</line>
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java</url>
-          <line>223</line>
+          <line>219</line>
           <properties />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java</url>
-          <line>77</line>
+          <line>74</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java</url>
-          <line>125</line>
+          <line>121</line>
           <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java</url>
-          <line>150</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java</url>
-          <line>190</line>
+          <line>186</line>
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleServiceImpl.java</url>
-          <line>44</line>
+          <line>40</line>
           <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
@@ -1194,31 +1130,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java</url>
-          <line>52</line>
+          <line>49</line>
           <properties />
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/service/RoleBaticsServiceImpl.java</url>
-          <line>245</line>
+          <line>237</line>
           <properties />
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java</url>
-          <line>111</line>
+          <line>108</line>
           <properties />
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java</url>
-          <line>121</line>
+          <line>118</line>
           <properties />
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java</url>
-          <line>125</line>
+          <line>122</line>
           <properties />
           <option name="timeStamp" value="84" />
         </line-breakpoint>
@@ -1322,116 +1258,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/config/SqlSessionFactoryConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.4/mybatis-3.4.4-sources.jar!/org/apache/ibatis/type/TypeAliasRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.4/mybatis-3.4.4-sources.jar!/org/apache/ibatis/io/ResolverUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="216" column="0" lean-forward="false" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/controller/DepartmentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="32" column="97" lean-forward="false" selection-start-line="32" selection-start-column="97" selection-end-line="32" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/ReflectUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/mapper/UserOrganizationsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/resources/generator/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/model/UserOrganizations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/IUserOrganizationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.7.RELEASE/spring-web-4.3.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2650">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/model/UserRoleMemberships.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/DepartmentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/DataNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.7.RELEASE/spring-tx-4.3.7.RELEASE.jar!/org/springframework/transaction/annotation/Transactional.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.7.RELEASE/spring-tx-4.3.7.RELEASE-sources.jar!/org/springframework/transaction/annotation/Isolation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-754">
-          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/utils/GsonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1475,9 +1301,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2025">
           <caret line="94" column="53" lean-forward="false" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1492,14 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
           <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/UserBaticsServerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1566,7 +1381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1574,9 +1388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1584,10 +1395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="93" column="68" lean-forward="true" selection-start-line="93" selection-start-column="68" selection-end-line="93" selection-end-column="68" />
-          <folding>
-            <element signature="e#2609#2610#0" expanded="true" />
-            <element signature="e#2668#2669#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1595,7 +1402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1611,7 +1417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1627,7 +1432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1635,7 +1439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1657,7 +1460,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user-batics-server/Readme">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
+        <state relative-caret-position="975">
           <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
           <folding />
         </state>
@@ -1665,7 +1468,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/UserCreateVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
+        <state relative-caret-position="2225">
           <caret line="147" column="61" lean-forward="false" selection-start-line="147" selection-start-column="61" selection-end-line="147" selection-end-column="61" />
           <folding />
         </state>
@@ -1681,8 +1484,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/queryvo/UserRoleQueryVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1700,14 +1503,14 @@
         <state relative-caret-position="100">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#140#141#0" expanded="false" />
+            <element signature="e#172#173#0" expanded="false" />
+            <element signature="e#222#223#0" expanded="false" />
+            <element signature="e#264#265#0" expanded="false" />
+            <element signature="e#295#296#0" expanded="false" />
+            <element signature="e#322#323#0" expanded="false" />
+            <element signature="e#362#363#0" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1715,23 +1518,23 @@
     <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/mapper/UsersMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state relative-caret-position="1925">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/resources/mapping/UsersMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        <state relative-caret-position="1075">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding>
             <element signature="n#sql#1;n#mapper#0;n#!!top" expanded="false" />
             <element signature="n#sql#2;n#mapper#0;n#!!top" expanded="false" />
@@ -1745,21 +1548,199 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/service/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="224" column="35" lean-forward="true" selection-start-line="224" selection-start-column="35" selection-end-line="224" selection-end-column="35" />
+        <state relative-caret-position="579">
+          <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
           <folding>
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1503#1504#0" expanded="true" />
-            <element signature="e#1963#1964#0" expanded="true" />
-            <element signature="e#2015#2016#0" expanded="true" />
-            <element signature="e#2066#2067#0" expanded="true" />
-            <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2355#2356#0" expanded="true" />
-            <element signature="e#2417#2418#0" expanded="true" />
-            <element signature="e#3125#3126#0" expanded="true" />
-            <element signature="e#3184#3185#0" expanded="true" />
-            <element signature="e#3248#3249#0" expanded="true" />
-            <element signature="e#3306#3307#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="false" />
+            <element signature="e#1503#1504#0" expanded="false" />
+            <element signature="e#1963#1964#0" expanded="false" />
+            <element signature="e#2015#2016#0" expanded="false" />
+            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2116#2117#0" expanded="false" />
+            <element signature="e#2355#2356#0" expanded="false" />
+            <element signature="e#2417#2418#0" expanded="false" />
+            <element signature="e#3125#3126#0" expanded="false" />
+            <element signature="e#3184#3185#0" expanded="false" />
+            <element signature="e#3248#3249#0" expanded="false" />
+            <element signature="e#3306#3307#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-context/1.1.7.RELEASE/spring-cloud-context-1.1.7.RELEASE.jar!/org/springframework/cloud/bootstrap/BootstrapApplicationListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding>
+            <marker date="1520590481570" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1520590481570" expanded="false" signature="159:1805" ph="..." />
+            <marker date="1520590481570" expanded="true" signature="2215:2222" ph="{}" />
+            <marker date="1520590481570" expanded="true" signature="2302:2791" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="2928:5803" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="5915:7373" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="7493:8509" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="8622:9294" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="9427:9773" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="9854:10536" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="10628:10996" ph="{...}" />
+            <marker date="1520590481570" expanded="false" signature="11033:11044" ph=" { " />
+            <marker date="1520590481570" expanded="false" signature="11063:11069" ph=" }" />
+            <marker date="1520590481570" expanded="false" signature="11096:11107" ph=" { " />
+            <marker date="1520590481570" expanded="false" signature="11125:11131" ph=" }" />
+            <marker date="1520590481570" expanded="true" signature="11228:12924" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="11438:11561" ph="{...}" />
+            <marker date="1520590481570" expanded="false" signature="11622:11637" ph=" { " />
+            <marker date="1520590481570" expanded="false" signature="11657:11667" ph=" }" />
+            <marker date="1520590481570" expanded="false" signature="11721:11736" ph=" { " />
+            <marker date="1520590481570" expanded="false" signature="11754:11764" ph=" }" />
+            <marker date="1520590481570" expanded="true" signature="11816:12052" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="12101:12227" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="12282:12387" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="12432:12693" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="12780:12918" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="13099:13536" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="13328:13377" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="13461:13530" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="13665:15502" ph="{...}" />
+            <marker date="1520590481570" expanded="false" signature="13796:13811" ph=" { " />
+            <marker date="1520590481570" expanded="false" signature="13832:13842" ph=" }" />
+            <marker date="1520590481570" expanded="false" signature="13912:13927" ph=" { " />
+            <marker date="1520590481570" expanded="false" signature="13948:13958" ph=" }" />
+            <marker date="1520590481570" expanded="false" signature="13989:14004" ph=" { " />
+            <marker date="1520590481570" expanded="false" signature="14023:14033" ph=" }" />
+            <marker date="1520590481570" expanded="true" signature="14106:14448" ph="{...}" />
+            <marker date="1520590481570" expanded="true" signature="14523:15496" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role-batics-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="70" lean-forward="false" selection-start-line="3" selection-start-column="70" selection-end-line="3" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-batics-server/src/main/java/com/vendor/UserBaticsServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-batics-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/bean/role/Roles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/commonUtils/src/main/java/com/vendor/bean/role/RolesExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/resources/mapping/RolesMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="63" lean-forward="false" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+          <folding>
+            <marker date="1558515173533" expanded="true" signature="4656:4673" ph="delete from roles... " />
+            <marker date="1558515173533" expanded="true" signature="8316:8342" ph="select count... roles" />
+            <marker date="1558515173533" expanded="true" signature="9929:10524" ph="update roles... " />
+            <marker date="1558515173533" expanded="true" signature="10697:11230" ph="update roles... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/RoleBaticsServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformbusi/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="90" column="12" lean-forward="true" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/controller/PlatformController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/PlatformbusiApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="e#988#989#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/role-batics-server/src/main/java/com/vendor/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformbusi/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformbusi/src/main/java/com/vendor/client/RoleFeignClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
