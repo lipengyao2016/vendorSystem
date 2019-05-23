@@ -85,8 +85,6 @@ public class ApolloBootConfig {
                             " oldValue: , " +change.getOldValue() +
                             "newValue: , " +change.getNewValue() +
                             "changeType:" + change.getChangeType());
-
-
                 }
             }
         });

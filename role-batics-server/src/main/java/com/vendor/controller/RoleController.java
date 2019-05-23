@@ -40,7 +40,7 @@ public class RoleController {
 
         System.out.println(role.getName());
 
-        log.info(" apollo config ServerDomain :" + apolloBootConfig.getServerDomain());
+        log.info(" apollo config ServerDomain :" + apolloBootConfig.getConfig().getProperty("server.domain",""));
       //  Roles newRole = (Roles) this.getRoleService().create(role);
 
        Roles newRole = (Roles) rolexxService.create(role);
