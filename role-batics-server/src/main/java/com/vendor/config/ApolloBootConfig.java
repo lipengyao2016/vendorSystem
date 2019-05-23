@@ -10,6 +10,7 @@ import com.vendor.controller.RoleController;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -18,7 +19,13 @@ public class ApolloBootConfig {
 
     private Log log = LogFactory.getLog(ApolloBootConfig.class);
 
-    public Config getConfig() {
+    @Bean
+    public ApolloConfigBean apolloConfigBean()
+    {
+        return new ApolloConfigBean();
+    }
+
+  /*  public Config getConfig() {
         return config;
     }
 
@@ -88,5 +95,5 @@ public class ApolloBootConfig {
                 }
             }
         });
-    }
+    }*/
 }

@@ -1,6 +1,7 @@
 package com.vendor.controller;
 
 import com.vendor.config.ApolloBootConfig;
+import com.vendor.config.ApolloConfigBean;
 import com.vendor.entity.ListResponse;
 import com.vendor.bean.role.Roles;
 import com.vendor.queryvo.RoleQueryVo;
@@ -29,6 +30,9 @@ public class RoleController {
     @Autowired
     ApolloBootConfig apolloBootConfig;
 
+    @Autowired
+    ApolloConfigBean apolloConfigBean;
+
 
 
     @RequestMapping(value = "/api/{ver}/roles", method = {RequestMethod.POST})
@@ -40,9 +44,10 @@ public class RoleController {
 
         System.out.println(role.getName());
 
-        log.info(" apollo config ServerDomain :" + apolloBootConfig.getConfig().getProperty("server.domain",""));
+        log.info(" apollo config redis.host :"
+                + apolloConfigBean.getProperty("redis.host"));
 
-        log.info(" apollo config ServerDomain :" + apolloBootConfig.getServerDomain());
+        log.info(" apollo config ServerDomain :" + apolloConfigBean.getProperty("server.domain"));
 
         //  Roles newRole = (Roles) this.getRoleService().create(role);
 
