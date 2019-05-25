@@ -26,15 +26,17 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
     private JpaRepository m_jpaRepository;
     private JpaSpecificationExecutor m_jpaSpecificationExecutor;
     private Class entityClass;
+    private Class queryClass;
 
     public BaseServiceImpl() {
 
     }
 
-    public BaseServiceImpl(Object obj, Class entityClass) {
+    public BaseServiceImpl(Object obj, Class entityClass,Class queryClass) {
         m_jpaRepository = (JpaRepository) obj;
         m_jpaSpecificationExecutor = (JpaSpecificationExecutor) obj;
         this.entityClass = entityClass;
+        this.queryClass = queryClass;
     }
 
 
@@ -307,12 +309,58 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
 
     @Override
     public int batchInsert(List record) {
-        return 0;
+
+        //批量存储的集合
+        List singleBatchData = new ArrayList<>();
+
+        //批量存储
+        for(Object obj : record) {
+            if(singleBatchData.size() == 100) {
+                this.m_jpaRepository.save(singleBatchData);
+                singleBatchData.clear();
+            }
+
+            singleBatchData.add(obj);
+        }
+
+        if(!singleBatchData.isEmpty()) {
+            this.m_jpaRepository.save(singleBatchData);
+        }
+
+        return record.size();
+
     }
 
     @Override
-    public Object batchUpdate(List uuids, Object updateObj) throws DataNotFoundException {
-        return null;
+    public Object batchUpdate((List<String> uuids, Object updateObj) throws DataNotFoundException {
+
+        String uuidQueryStr  = GsonUtils.ToJson(uuids,List.class);
+        Object queryObj = null;
+        try {
+            queryObj = ReflectUtils.createInstance(this.queryClass);
+            try {
+                ReflectUtils.setField(queryObj, "uuid", uuidQueryStr,true);
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+        ListResponse queryList = this.list(queryObj,null,null);
+        for (Object persistObj : queryList.getItems())
+        {
+             
+        }
+
+        m_jpaRepository.saveAll(queryList.getItems());
+
+        return updateObj;
     }
 
     @Override
