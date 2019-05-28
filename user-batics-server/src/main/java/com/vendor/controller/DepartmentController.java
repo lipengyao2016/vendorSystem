@@ -97,6 +97,8 @@ public class DepartmentController {
         log.info(",version:" + version);
         log.info("DepartmentUUID22  :" + DepartmentUUID);
 
+
+
         return DepartmentxxService.delete(DepartmentUUID);
     }
 

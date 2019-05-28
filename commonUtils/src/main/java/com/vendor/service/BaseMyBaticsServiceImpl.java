@@ -114,7 +114,7 @@ public class BaseMyBaticsServiceImpl<T, QY_T> implements  IBaseService{
             rows = 10000;
         }
 
-        PageHelper.startPage(page -1, rows);
+        PageHelper.startPage(page, rows);
 
         Object example = null;
         try {

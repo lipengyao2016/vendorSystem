@@ -38,3 +38,7 @@ http://localhost:9013/api/v1/users/87305bc24d8d4c0a995751
 
 
 http://localhost:9013/api/v1/userRoleOrgs?orgaUUID=19iO00E5VGuequAEQ6aFWA&page=2&rows=1
+
+http://localhost:9013/api/v1/users?name=*wangfei*&createdAt=["2019-05-22 01: 35: 44", "2019-05-23 23: 31: 54"]&page=3&rows=2
+
+http://localhost:9013/api/v1/userRoleViews?owneruuid=19iO00E5VGuequAEQ6aFWA&usercreateat=["2019-02-21 01: 35: 44", "2019-02-23 23: 31: 54"]

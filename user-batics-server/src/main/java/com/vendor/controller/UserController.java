@@ -3,9 +3,12 @@ package com.vendor.controller;
 import com.vendor.entity.ListResponse;
 import com.vendor.bean.user.UserRoleOrgs;
 import com.vendor.bean.user.Users;
+import com.vendor.bean.user.UserRoleViews;
 import com.vendor.queryvo.user.UserCreateVo;
 import com.vendor.queryvo.user.UserQueryVo;
 import com.vendor.bean.user.UserRoleOrgQueryVo;
+import com.vendor.queryvo.user.UserRoleViewQueryVo;
+import com.vendor.service.IUserRoleViewService;
 import com.vendor.service.IUserService;
 import com.vendor.utils.DataNotFoundException;
 import com.vendor.utils.GsonUtils;
@@ -24,6 +27,9 @@ public class UserController {
 
     @Autowired
     IUserService UserService;
+
+    @Autowired
+    IUserRoleViewService userRoleViewService;
 
 
     @RequestMapping(value = "/api/{ver}/users", method = {RequestMethod.POST})
@@ -89,6 +95,15 @@ public class UserController {
             , Integer page, Integer rows) {
         log.info(",version:" + version);
         return UserService.getUserRole(userRoleOrgQueryVo,page,rows);
+    }
+
+    @RequestMapping(value = "/api/{ver}/userRoleViews", method = {RequestMethod.GET})
+    @ResponseBody
+    public ListResponse<UserRoleViews> listUserRoleViews(@PathVariable("ver") String version,
+                                                         UserRoleViewQueryVo userRoleViews
+            , Integer page, Integer rows) {
+        log.info(",version:" + version);
+        return userRoleViewService.list(userRoleViews,page,rows);
     }
 
 

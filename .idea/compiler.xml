@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="commonUtils" />
+        <module name="eureka-server" />
         <module name="operationapi" />
         <module name="platform-busi-server" />
         <module name="platformbusi" />
@@ -18,6 +19,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="commonUtils" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="eurekaserver" target="1.8" />
       <module name="operationapi" target="1.8" />
       <module name="platform-busi-server" target="1.8" />
       <module name="platformbusi" target="1.8" />
