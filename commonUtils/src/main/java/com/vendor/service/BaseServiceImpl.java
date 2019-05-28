@@ -332,8 +332,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
     }
 
     @Override
-    public Object batchUpdate((List<String> uuids, Object updateObj) throws DataNotFoundException {
-
+    public Object batchUpdate(List uuids, Object updateObj) throws DataNotFoundException {
         String uuidQueryStr  = GsonUtils.ToJson(uuids,List.class);
         Object queryObj = null;
         try {
@@ -355,13 +354,15 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         ListResponse queryList = this.list(queryObj,null,null);
         for (Object persistObj : queryList.getItems())
         {
-             
+
         }
 
         m_jpaRepository.saveAll(queryList.getItems());
 
         return updateObj;
     }
+
+
 
     @Override
     public int batchDelete(List uuids) {
