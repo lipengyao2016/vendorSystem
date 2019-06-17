@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
@@ -46,6 +47,7 @@ public class UserbatisPlusConfig {
         configuration.setFieldStrategy(fieldStrategy);
         //数据库大写 下划线转换
         configuration.setCapitalMode(capitalMode);*/
+       // configuration.setSqlInjector(new LogicSqlInjector());
         return configuration;
     }
 
@@ -57,8 +59,9 @@ public class UserbatisPlusConfig {
         log.info("初始化SqlSessionFactory");
         MybatisSqlSessionFactoryBean sqlSessionFactoryBean=new MybatisSqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
-        //Interceptor[] interceptor={new PaginationInterceptor()};
-       // sqlSessionFactoryBean.setPlugins(interceptor);
+        Interceptor[] interceptor={new PaginationInterceptor(),new PerformanceInterceptor()
+                /*,new OptimisticLockerInterceptor()*/};
+        sqlSessionFactoryBean.setPlugins(interceptor);
         //ResourcePatternResolver resolver=new PathMatchingResourcePatternResolver();
         try{
             sqlSessionFactoryBean.setGlobalConfig(configuration);

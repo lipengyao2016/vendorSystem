@@ -18,6 +18,11 @@ public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(value = RuntimeException.class)
     //@ResponseBody
     public void handler(Exception e, HttpServletResponse response) {
+
+        //e.printStackTrace();
+
+        LOGGER.error("系统异常:",e);
+
         if (e instanceof DataNotFoundException) {
            response.setStatus(404);
             try {

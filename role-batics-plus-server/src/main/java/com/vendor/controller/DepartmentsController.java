@@ -1,14 +1,26 @@
 package com.vendor.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.vendor.entity.Departments;
+import com.vendor.entity.ListResponse;
+import com.vendor.entity.Roles;
+import com.vendor.entity.UserRoles;
+import com.vendor.queryvo.UserRoleQueryVo;
 import com.vendor.service.IDepartmentsService;
+import com.vendor.user_mapper.DepartmentsMapper;
+import com.vendor.user_mapper.UserRoleMapper;
 import com.vendor.utils.DBEntityUtils;
+import com.vendor.utils.GsonUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -29,7 +41,11 @@ public class DepartmentsController {
     @Autowired
     IDepartmentsService departmentService;
 
+    @Autowired
+    DepartmentsMapper departmentDao;
 
+    @Autowired
+    UserRoleMapper userRoleMapper;
 
     @RequestMapping(value = "/api/{ver}/departments", method = {RequestMethod.POST})
     @ResponseBody
@@ -45,6 +61,22 @@ public class DepartmentsController {
         departmentService.save(department);
         return department;
         //return  null;
+    }
+
+    @RequestMapping(value = "/api/{ver}/userRoles", method = {RequestMethod.GET})
+    @ResponseBody
+    public IPage<UserRoles> listUserRoles(@PathVariable("ver") String version,
+                                                 UserRoles role
+            , Integer page, Integer rows) {
+
+        log.info(",version:" + version);
+        log.info("role  :" + GsonUtils.ToJson(role, UserRoles.class));
+        QueryWrapper<UserRoles> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("roleUUID",role.getRoleUUID());
+        Page<UserRoles> userRolesPage = new Page<UserRoles>(1, 2);
+        List<UserRoles> t1 = departmentDao.getUserRoles(userRolesPage,queryWrapper);
+        userRolesPage.setRecords(t1);
+        return userRolesPage;
     }
 
 }
