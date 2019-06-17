@@ -11,6 +11,8 @@ public class StrUtils {
             Obj_Boolean,Obj_Date,Obj_normal
     };
 
+    public static  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     public static boolean isValidDate(String str) {
         boolean convertSuccess=true;
 
@@ -48,6 +50,10 @@ public class StrUtils {
         {
             return emObjType.Obj_normal;
         }
+    }
+
+    public static Date convertStrToDate(String dateObj) throws ParseException {
+        return  sdf.parse( dateObj);
     }
 
 

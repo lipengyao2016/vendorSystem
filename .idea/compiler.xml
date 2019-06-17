@@ -7,11 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="commonUtils" />
+        <module name="crm-gateway-zuul" />
         <module name="eureka-server" />
+        <module name="operation-api-1" />
+        <module name="operation-api-server" />
         <module name="operationapi" />
         <module name="platform-busi-server" />
         <module name="platformbusi" />
+        <module name="role-batics-plus-server" />
         <module name="role-batics-server" />
+        <module name="springInitializr" />
         <module name="sqb-store-map" />
         <module name="user-batics-server" />
         <module name="user-bats-server" />
@@ -19,15 +24,20 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="commonUtils" target="1.8" />
+      <module name="crm-gateway-zuul" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="eurekaserver" target="1.8" />
+      <module name="operation-api-1" target="1.6" />
+      <module name="operation-api-server" target="1.8" />
       <module name="operationapi" target="1.8" />
       <module name="platform-busi-server" target="1.8" />
       <module name="platformbusi" target="1.8" />
+      <module name="role-batics-plus-server" target="1.8" />
       <module name="role-batics-server" target="1.8" />
       <module name="role-batics-server (1)" target="1.8" />
       <module name="role-mybatics-server" target="1.8" />
       <module name="role-server" target="1.8" />
+      <module name="springInitializr" target="1.8" />
       <module name="sqb-store-map" target="1.5" />
       <module name="user-batics-server" target="1.8" />
       <module name="user-bats-server" target="1.8" />

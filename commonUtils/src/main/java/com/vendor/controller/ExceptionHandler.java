@@ -21,7 +21,8 @@ public class ExceptionHandler {
         if (e instanceof DataNotFoundException) {
            response.setStatus(404);
             try {
-                ApiResponse apiResponse = new ApiResponse(((DataNotFoundException) e).getErrorCode(),e.getMessage());
+                ApiResponse apiResponse = new ApiResponse(
+                        ((DataNotFoundException) e).getErrorCode(),e.getMessage());
                 response.getWriter().append(GsonUtils.ToJson(apiResponse,ApiResponse.class));
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -29,7 +30,7 @@ public class ExceptionHandler {
         } else {
             response.setStatus(500);
             try {
-                ApiResponse apiResponse = new ApiResponse("4000",e.getMessage());
+                ApiResponse apiResponse = new ApiResponse(4000,e.getMessage());
                 response.getWriter().append(GsonUtils.ToJson(apiResponse,ApiResponse.class));
             } catch (IOException e1) {
                 e1.printStackTrace();

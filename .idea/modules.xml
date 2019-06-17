@@ -3,12 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/commonUtils/commonUtils.iml" filepath="$PROJECT_DIR$/commonUtils/commonUtils.iml" />
+      <module fileurl="file://D:/E/web/coder/testing/Api-gateway/crm-gateway-zuul.iml" filepath="D:/E/web/coder/testing/Api-gateway/crm-gateway-zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/operation-api-1/operation-api-1.iml" filepath="$PROJECT_DIR$/operation-api-1/operation-api-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/operation-api-server/operation-api-server.iml" filepath="$PROJECT_DIR$/operation-api-server/operation-api-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/operationapi/operationapi.iml" filepath="$PROJECT_DIR$/operationapi/operationapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform-busi-server.iml" filepath="$PROJECT_DIR$/platform-busi-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/platformbusi/platformbusi.iml" filepath="$PROJECT_DIR$/platformbusi/platformbusi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/role-batics-plus-server/role-batics-plus-server.iml" filepath="$PROJECT_DIR$/role-batics-plus-server/role-batics-plus-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/role-batics-server/role-batics-server.iml" filepath="$PROJECT_DIR$/role-batics-server/role-batics-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/role-server/role-server.iml" filepath="$PROJECT_DIR$/role-server/role-server.iml" />
+      <module fileurl="file://D:/E/web/coder/testing/spring-boot-initializr/springInitializr.iml" filepath="D:/E/web/coder/testing/spring-boot-initializr/springInitializr.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Application/source/VendorSystem/Pay/ShouQianBaServer/doc/shouqiaba/shouqianba-webapi-javademo-master/sqb-store-map.iml" filepath="$PROJECT_DIR$/../Application/source/VendorSystem/Pay/ShouQianBaServer/doc/shouqiaba/shouqianba-webapi-javademo-master/sqb-store-map.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-batics-server/user-batics-server.iml" filepath="$PROJECT_DIR$/user-batics-server/user-batics-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonUtils/user-bats-server.iml" filepath="$PROJECT_DIR$/commonUtils/user-bats-server.iml" />

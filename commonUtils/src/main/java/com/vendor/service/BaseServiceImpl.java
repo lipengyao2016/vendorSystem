@@ -103,7 +103,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         }
         else
         {
-            throw new DataNotFoundException("5003","get db not found uuid:" + uuid);
+            throw new DataNotFoundException(5003,"get db not found uuid:" + uuid);
         }
 
     }
@@ -282,7 +282,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         }
         else
         {
-           throw new DataNotFoundException("5000","update db not found uuid:" + uuid);
+           throw new DataNotFoundException(5000,"update db not found uuid:" + uuid);
         }
 
         return oldRole;
@@ -297,7 +297,7 @@ public class BaseServiceImpl<T, QY_T> implements IBaseService {
         }
         else
         {
-            throw new DataNotFoundException("5001","delete22 db not found uuid:" + uuid);
+            throw new DataNotFoundException(5001,"delete22 db not found uuid:" + uuid);
         }
          return  oldRole;
     }

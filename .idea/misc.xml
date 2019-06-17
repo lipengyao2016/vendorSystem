@@ -17,10 +17,18 @@
         <option value="$PROJECT_DIR$/platformbusi/pom.xml" />
         <option value="$PROJECT_DIR$/operationapi/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="D:/E/web/coder/testing/spring-boot-initializr/pom.xml" />
+        <option value="$PROJECT_DIR$/operation-api-1/pom.xml" />
+        <option value="$PROJECT_DIR$/operation-api-server/pom.xml" />
+        <option value="D:/E/web/coder/testing/Api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/role-batics-plus-server/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
 </project>

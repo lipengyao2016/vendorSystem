@@ -11,6 +11,9 @@ public class DBEntityUtils {
             ReflectUtils.setField(obj, "createdAt", new Date(),true);
             ReflectUtils.setField(obj, "modifiedAt", new Date(),true);
             ReflectUtils.setField(obj, "status", "enabled",false);
+
+            ReflectUtils.setField(obj, "version", 0,true);
+            ReflectUtils.setField(obj, "deleted", 0,true);
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
